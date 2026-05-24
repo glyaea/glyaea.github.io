@@ -22,13 +22,13 @@
 
 
 body {
-	font-family: "Palatino", serif;
+	font-family: "Computer Modern Serif", "Palatino", "Times New Roman", serif;
 	font-size: var(--font-size);
 	color: black;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
-	line-height: 1.25;
+	line-height: 1.15;
 	margin: 2rem auto;
 	text-align: left;
 	width: min(80vw, 640px);
@@ -58,15 +58,23 @@ article img {
 
 blockquote {
 	border-left: 1px solid lightgrey;
-	padding-left: 1.25rem;
+	padding-left: 1rem;
 }
 
 code {
 	font-family: "SF Mono", monospace;
 }
 
-li {
-	padding-inline-start: 0.25rem;
+h1 {
+	font-size: 1.5rem;
+}
+
+h2 {
+	font-size: 1.25rem;
+}
+
+h3 {
+	font-size: 1.125rem;
 }
 
 li::marker {
@@ -82,7 +90,7 @@ nowrap {
 }
 
 ol, ul {
-	padding-inline-start: 1rem;
+	padding-inline-start: 2rem;
 }
 
 table {
