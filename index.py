@@ -26,7 +26,7 @@ def slugify(title):
 
 def format_date(date):
 	date = datetime.datetime.strptime(date, "%Y-%m-%d %H:%M")
-	return f"{date.day} {date.strftime('%B %Y')}"
+	return date.strftime("%B %Y")
 
 
 def rename_posts(posts):

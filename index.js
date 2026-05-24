@@ -22,7 +22,6 @@ const showTable = () => {
 }
 
 const showPost = async (path, title) => {
-	heading.textContent = title
 	const markdown = (await (await fetch(path)).text()).replace(/^---[\s\S]*?---\s*/, "")
 	const math = []
 	const text = markdown.replace(/\$\$[\s\S]*?\$\$|\$[^$\n]*?\$/g, value => `@@MATH${math.push(value) - 1}@@`)
@@ -39,9 +38,10 @@ const showPost = async (path, title) => {
 		throwOnError: false,
 	})
 	article.querySelectorAll(".katex").forEach(math => math.classList.add("donthyphenate"))
+	hyphenateArticle()
+	heading.textContent = title
 	table.hidden = true
 	article.hidden = false
-	hyphenateArticle()
 }
 
 const route = async () => {

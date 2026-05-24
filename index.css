@@ -3,7 +3,7 @@
 @import url("https://fonts.cdnfonts.com/css/sf-mono");
 
 :root {
-	--font-size: 20px;
+	--font-size: clamp(0.75rem, 0.6786rem + 0.3571vw, 1rem); /* [12, 16] on [320, 1440] px */
 }
 
 * {
@@ -29,9 +29,9 @@ body {
 	flex-direction: column;
 	gap: 2rem;
 	line-height: 1.25;
-	margin: 4rem auto;
+	margin: 2rem auto;
 	text-align: left;
-	width: 800px;
+	width: min(80vw, 768px);
 }
 
 
@@ -65,12 +65,16 @@ code {
 	font-family: "SF Mono", monospace;
 }
 
-li + li {
-	margin-top: 0.5rem;
+li {
+	padding-inline-start: 0.5rem;
 }
 
 li::marker {
 	font-weight: bold;
+}
+
+li + li {
+	margin-top: 0.5rem;
 }
 
 nowrap {
@@ -78,7 +82,7 @@ nowrap {
 }
 
 ol, ul {
-	padding-inline-start: 1rem;
+	padding-inline-start: 2rem;
 }
 
 table {
