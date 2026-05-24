@@ -7,10 +7,10 @@ date: 2026-05-04 16:30
 
 Suppose you have data as follows.
 
-| Sample | Distance (m) | Time (s) |
+| Sample | Age          | Points   |
 |--------|--------------|----------|
-| A      | 1            | 2        |
-| B      | 3            | 4        |
+| Alice  | $1$          | $2$      |
+| Bob    | $3$          | $4$      |
 
 BatchNorm (resp. LayerNorm)
 maps each $\mathbf{x}\in\{(1,3),(2,4)\}$ (resp. $\mathbf{x}\in\{(1,2),(3,4)\}$)

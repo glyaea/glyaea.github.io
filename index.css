@@ -31,7 +31,7 @@ body {
 	line-height: 1.25;
 	margin: 2rem auto;
 	text-align: left;
-	width: min(80vw, 768px);
+	width: min(80vw, 640px);
 }
 
 
@@ -58,7 +58,7 @@ article img {
 
 blockquote {
 	border-left: 1px solid lightgrey;
-	padding-left: 1rem;
+	padding-left: 1.25rem;
 }
 
 code {
@@ -66,7 +66,7 @@ code {
 }
 
 li {
-	padding-inline-start: 0.5rem;
+	padding-inline-start: 0.25rem;
 }
 
 li::marker {
@@ -82,7 +82,7 @@ nowrap {
 }
 
 ol, ul {
-	padding-inline-start: 2rem;
+	padding-inline-start: 1rem;
 }
 
 table {
@@ -91,12 +91,12 @@ table {
 }
 
 table:not([main]) {
-	border-bottom: 1px solid lightgrey;
-	border-top: 1px solid lightgrey;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
 }
 
 table:not([main]) th {
-	border-bottom: 1px solid lightgrey;
+	border-bottom: 1px solid black;
 }
 
 td, th {
