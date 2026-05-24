@@ -1,0 +1,106 @@
+@import url("https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/fonts.css");
+@import url("https://fonts.cdnfonts.com/css/palatino");
+@import url("https://fonts.cdnfonts.com/css/sf-mono");
+
+:root {
+	--font-size: 20px;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+[hidden] {
+	display: none;
+}
+
+.katex {
+	font-size: var(--font-size);
+}
+
+
+body {
+	font-family: "Palatino", serif;
+	font-size: var(--font-size);
+	color: black;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	line-height: 1.25;
+	margin: 4rem auto;
+	text-align: left;
+	width: 800px;
+}
+
+
+a, a:visited {
+	color: teal;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	text-decoration-thickness: 0.5px;
+}
+
+article {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+article img {
+	max-width: 100%;
+}
+
+blockquote {
+	border-left: 1px solid lightgrey;
+	padding-left: 1rem;
+}
+
+code {
+	font-family: "SF Mono", monospace;
+}
+
+li + li {
+	margin-top: 0.5rem;
+}
+
+li::marker {
+	font-weight: bold;
+}
+
+nowrap {
+	white-space: nowrap;
+}
+
+ol, ul {
+	padding-inline-start: 1rem;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table:not([main]) {
+	border-bottom: 1px solid lightgrey;
+	border-top: 1px solid lightgrey;
+}
+
+table:not([main]) th {
+	border-bottom: 1px solid lightgrey;
+}
+
+td, th {
+	padding-bottom: 0.25rem;
+	padding-top: 0.25rem;
+}
+
+td + td,
+th + th {
+	padding-left: 1rem;
+}
