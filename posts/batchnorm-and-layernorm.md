@@ -7,14 +7,12 @@ date: 2026-05-04 16:30
 
 Suppose you have data as follows.
 
-| Sample | Age          | Points   |
-|--------|--------------|----------|
-| Alice  | $1$          | $2$      |
-| Bob    | $3$          | $4$      |
+| Sample | Age | Points |
+|--------|-----|--------|
+| Alice  | $1$ | $2$    |
+| Bob    | $3$ | $4$    |
 
-BatchNorm (resp. LayerNorm)
-maps each $\mathbf{x}\in\{(1,3),(2,4)\}$ (resp. $\mathbf{x}\in\{(1,2),(3,4)\}$)
-to
+BatchNorm (resp. LayerNorm) maps each $\mathbf{x}\in\{(1,3),(2,4)\}$ (resp. $\mathbf{x}\in\{(1,2),(3,4)\}$) to
 $$
 \gamma_{\mathbf{x}}\left(\frac{x-\mu_{\mathbf{x}}}{\sigma_{\mathbf{x}}}\ \middle\vert\ x\in\mathbf{x}\right)+\beta_{\mathbf{x}}
 $$
