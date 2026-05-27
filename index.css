@@ -75,8 +75,8 @@ h3 {
 	font-size: 1.125rem;
 }
 
-li::marker {
-	font-weight: bold;
+li {
+	padding-left: 0.5rem;
 }
 
 li + li {
@@ -88,7 +88,7 @@ nowrap {
 }
 
 ol, ul {
-	padding-inline-start: 2rem;
+	padding-inline-start: 1.5rem;
 }
 
 table {

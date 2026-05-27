@@ -19,10 +19,10 @@ $$
 
 Here is a way to reason through it!
 
-1. Imagine that, while ploughing, you wear a magical device $p$ that, at any position $L_{i,j}$, tells you the parity of $i+j$ (i.e. whether $i+j$ is odd or even).
-2. We know $p$ is odd at $S$.
-3. Clearly, any move from any position will flip $p$.
+1. Suppose you wear a magical device $p$ that, at any position $L_{i,j}$, says if $i+j$ is odd or even.
+2. Clearly, any move from any position will flip what $p$ says.
+3. We know $p$ says "odd" at $S=L_{1,4}$, because $1+4=7$ is odd.
 4. To complete the plough, we must make $11=3(4)-1$ moves, and thus, flips.
-5. So if an ending position $E'$ exists, $p$ would be even at $E'$.
-6. But we know $p$ is odd at $E$.
+5. So if an ending position $E'$ exists, $p$ must say "even" at $E'$.
+6. But we know $p$ says "odd" at $E=L_{3,4}$, because $3+4=7$ is odd.
 7. Thus, the task is impossible.
