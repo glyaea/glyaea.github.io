@@ -13,4 +13,4 @@ Now, $f$ is supposedly surjective, so the usual definition of surjectivity appli
 In particular, $d\in\mathcal{P}(X)$, so there exists $x\in X$ such that $f(x)=d$.
 Now, consider: is $x\in d$?
 If $x\in d$, then $x\notin f(x)=d$.
-This is logically impossible, so our supposition that $f$ exists must be false.
+This is impossible, so our supposition that $f$ exists must be false.

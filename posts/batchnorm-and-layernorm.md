@@ -12,11 +12,11 @@ Suppose you have data as follows.
 | Alice  | $1$ | $2$    |
 | Bob    | $3$ | $4$    |
 
-BatchNorm (resp. LayerNorm) maps each $\mathbf{x}\in\{(1,3),(2,4)\}$ (resp. $\mathbf{x}\in\{(1,2),(3,4)\}$) to
+BatchNorm (resp. LayerNorm) maps each $\bm{x}\in\{(1,3),(2,4)\}$ (resp. $\bm{x}\in\{(1,2),(3,4)\}$) to
 $$
-\gamma_{\mathbf{x}}\left(\frac{x-\mu_{\mathbf{x}}}{\sigma_{\mathbf{x}}}\ \middle\vert\ x\in\mathbf{x}\right)+\beta_{\mathbf{x}}
+\gamma_{\bm{x}}\left(\frac{x-\mu_{\bm{x}}}{\sigma_{\bm{x}}}\ \middle\vert\ x\in\bm{x}\right)+\beta_{\bm{x}}
 $$
-where $\gamma_{\mathbf{x}}\in\mathbb{R}$ is a learned scale parameter of $\mathbf{x}$,
-and $\beta_{\mathbf{x}}\in\mathbb{R}$ is a learned shift parameter of $\mathbf{x}$,
-and $\mu_{\mathbf{x}}\in\mathbb{R}$ is the mean of $\mathbf{x}$,
-and $\sigma_{\mathbf{x}}\in\mathbb{R}$ is the standard deviation of $\mathbf{x}$.
+where $\gamma_{\bm{x}}\in\mathbb{R}$ is a learned scale parameter of $\bm{x}$,
+and $\beta_{\bm{x}}\in\mathbb{R}$ is a learned shift parameter of $\bm{x}$,
+and $\mu_{\bm{x}}\in\mathbb{R}$ is the mean of $\bm{x}$,
+and $\sigma_{\bm{x}}\in\mathbb{R}$ is the standard deviation of $\bm{x}$.

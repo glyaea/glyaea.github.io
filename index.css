@@ -29,22 +29,19 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
-	line-height: 1.25;
+	line-height: 1.5;
 	margin: 2rem auto;
 	text-align: left;
-	width: min(80vw, 640px);
+	width: min(80vw, 720px);
 }
 
 
-a, a:visited {
-	color: teal;
-	text-decoration: none;
-}
-
-a:hover {
+a, a:hover, a:visited {
+	color: black;
 	text-decoration: underline;
-	text-underline-offset: 2px;
+	text-decoration-color: darkgrey;
 	text-decoration-thickness: 0.5px;
+	text-underline-offset: 2px;
 }
 
 article {
@@ -99,21 +96,34 @@ table {
 	width: 100%;
 }
 
+table[main] tr + tr {
+	border-top: 1rem solid transparent;
+}
+
 table:not([main]) {
 	border-bottom: 1px solid black;
 	border-top: 1px solid black;
+}
+
+table:not([main]) td,
+table:not([main]) th {
+	padding-bottom: 0.25rem;
+	padding-left: 0.5rem;
+	padding-top: 0.25rem;
+	padding-right: 0.5rem;
 }
 
 table:not([main]) th {
 	border-bottom: 1px solid black;
 }
 
-td, th {
-	padding-bottom: 0.25rem;
-	padding-top: 0.25rem;
+td:first-child,
+th:first-child {
+	vertical-align: top;
+	white-space: nowrap;
 }
 
 td + td,
 th + th {
-	padding-left: 1rem;
+	padding-left: 2rem;
 }
