@@ -37,6 +37,10 @@ const showPost = async (path, title) => {
 		],
 		throwOnError: false,
 	})
+	article.querySelectorAll("pre code").forEach(code => {
+		if (window.hljs) hljs.highlightElement(code)
+		code.classList.add("donthyphenate")
+	})
 	article.querySelectorAll(".katex").forEach(math => math.classList.add("donthyphenate"))
 	hyphenateArticle()
 	heading.textContent = title
