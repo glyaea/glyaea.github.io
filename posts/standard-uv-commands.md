@@ -4,8 +4,6 @@ date: 2026-05-29 21:30
 ---
 
 ```sh
-cd project
-
 uv init --bare
 uv add foo
 uv remove foo
