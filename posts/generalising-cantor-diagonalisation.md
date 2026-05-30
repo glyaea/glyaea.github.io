@@ -1,5 +1,5 @@
 ---
-title: Generalised Cantor diagonalisation
+title: Generalising Cantor diagonalisation
 date: 2026-05-23 15:00
 ---
 

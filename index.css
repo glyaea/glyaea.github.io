@@ -1,31 +1,38 @@
-/* @import url("https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/fonts.css"); */
-@import url("https://fonts.cdnfonts.com/css/palatino");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..500;1,400..500&display=swap");
 @import url("https://fonts.cdnfonts.com/css/sf-mono");
 
 :root {
 	--font-size: 16px;
 }
 
-.katex { font-size: var(--font-size); }
-[hidden] { display: none; }
-nowrap { white-space: nowrap; }
+.katex {
+	font-size: var(--font-size);
+}
+
+[hidden] {
+	display: none;
+}
+
+nowrap {
+	white-space: nowrap;
+}
 
 
 * {
 	box-sizing: border-box;
+	font-synthesis: none;
 	margin: 0;
 	padding: 0;
 }
 
 body {
-	font-family: "Palatino", serif;
+	font-family: "Lora", serif;
 	font-size: var(--font-size);
-	font-weight: 400;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
-	line-height: 1.5;
-	margin: 2rem auto;
+	line-height: 1.25;
+	margin: 4rem auto;
 	text-align: left;
 	width: min(80vw, 640px);
 }
@@ -34,7 +41,7 @@ body {
 a, a:hover, a:visited {
 	color: black;
 	text-decoration: underline;
-	text-decoration-color: darkgrey;
+	text-decoration-color: silver;
 	text-decoration-thickness: 0.5px;
 	text-underline-offset: 2px;
 }
@@ -46,18 +53,20 @@ article {
 }
 
 blockquote {
-	border-left: 1px solid lightgrey;
+	border-left: 1px solid silver;
 	padding-left: 1rem;
 }
 
 code {
 	font-family: "SF Mono", monospace !important;
-	font-size: 0.8rem !important;
-	font-weight: 300;
 }
 
 code, pre {
 	background: whitesmoke !important;
+}
+
+dl, ol, ul {
+	padding-inline-start: 1.75rem;
 }
 
 h1 {
@@ -72,20 +81,21 @@ h3 {
 	font-size: 1.125rem;
 }
 
+hr {
+	border: 0;
+	border-top: 0.5px solid silver;
+}
+
 img {
 	max-width: 100%;
 }
 
 li {
-	padding-left: 0.5rem;
+	padding-left: 0.25rem;
 }
 
 li + li {
 	margin-top: 0.5rem;
-}
-
-ol, ul {
-	padding-inline-start: 1.5rem;
 }
 
 pre {
@@ -98,31 +108,26 @@ table {
 	width: 100%;
 }
 
-table[main] tr + tr {
-	border-top: 0.5rem solid transparent;
+table:not([toc]) th {
+	background: whitesmoke;
 }
 
-table:not([main]) {
-	border-bottom: 0.5px solid black;
-	border-top: 0.5px solid black;
+table:not([toc]) td, table:not([toc]) th {
+	border: 0.5px solid silver;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
 }
 
-table:not([main]) td,
-table:not([main]) th {
-	padding: 0.25rem 0.5rem;
+td, th {
+	padding-bottom: 0.25rem;
+	padding-top: 0.25rem;
 }
 
-table:not([main]) th {
-	border-bottom: 0.5px solid black;
-}
-
-td:first-child,
-th:first-child {
+td:first-child, th:first-child {
 	vertical-align: top;
 	white-space: nowrap;
 }
 
-td + td,
-th + th {
+td + td, th + th {
 	padding-left: 2rem;
 }
