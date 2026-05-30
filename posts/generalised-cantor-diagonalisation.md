@@ -1,5 +1,5 @@
 ---
-title: Cantor's generalised diagonal argument
+title: Generalised Cantor diagonalisation
 date: 2026-05-23 15:00
 ---
 

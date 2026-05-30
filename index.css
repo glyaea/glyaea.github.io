@@ -3,7 +3,6 @@
 @import url("https://fonts.cdnfonts.com/css/sf-mono");
 
 :root {
-	/* [16, 20] on [320, 1920] px */
 	--font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
 }
 
@@ -13,13 +12,8 @@
 	padding: 0;
 }
 
-[hidden] {
-	display: none;
-}
-
-.katex {
-	font-size: var(--font-size);
-}
+[hidden] { display: none; }
+.katex { font-size: var(--font-size); }
 
 
 body {
@@ -51,10 +45,6 @@ article {
 	gap: 1rem;
 }
 
-article img {
-	max-width: 100%;
-}
-
 blockquote {
 	border-left: 1px solid lightgrey;
 	padding-left: 1rem;
@@ -81,6 +71,10 @@ h3 {
 	font-size: 1.125rem;
 }
 
+img {
+	max-width: 100%;
+}
+
 li {
 	padding-left: 0.5rem;
 }
@@ -98,6 +92,7 @@ ol, ul {
 }
 
 pre {
+	border-radius: 0.5rem;
 	padding: 0.5rem;
 }
 
