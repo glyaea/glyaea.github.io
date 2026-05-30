@@ -3,8 +3,13 @@
 @import url("https://fonts.cdnfonts.com/css/sf-mono");
 
 :root {
-	--font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+	--font-size: 16px;
 }
+
+.katex { font-size: var(--font-size); }
+[hidden] { display: none; }
+nowrap { white-space: nowrap; }
+
 
 * {
 	box-sizing: border-box;
@@ -12,22 +17,17 @@
 	padding: 0;
 }
 
-[hidden] { display: none; }
-.katex { font-size: var(--font-size); }
-
-
 body {
-	font-family: "Palatino", "Times New Roman", serif;
+	font-family: "Palatino", serif;
 	font-size: var(--font-size);
 	font-weight: 400;
-	color: black;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
 	line-height: 1.5;
 	margin: 2rem auto;
 	text-align: left;
-	width: min(80vw, 800px);
+	width: min(80vw, 640px);
 }
 
 
@@ -51,8 +51,9 @@ blockquote {
 }
 
 code {
-	font-family: "SF Mono", monospace;
-	font-size: 0.8rem;
+	font-family: "SF Mono", monospace !important;
+	font-size: 0.8rem !important;
+	font-weight: 300;
 }
 
 code, pre {
@@ -83,10 +84,6 @@ li + li {
 	margin-top: 0.5rem;
 }
 
-nowrap {
-	white-space: nowrap;
-}
-
 ol, ul {
 	padding-inline-start: 1.5rem;
 }
@@ -112,10 +109,7 @@ table:not([main]) {
 
 table:not([main]) td,
 table:not([main]) th {
-	padding-bottom: 0.25rem;
-	padding-left: 0.5rem;
-	padding-top: 0.25rem;
-	padding-right: 0.5rem;
+	padding: 0.25rem 0.5rem;
 }
 
 table:not([main]) th {
