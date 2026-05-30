@@ -62,13 +62,13 @@ posts = sorted(
 
 rows = "\n".join(
 	(
-		f"\t\t<tr>\n\t\t\t<td>{format_date(post['date'])}</td>\n"
-		f"\t\t\t<td><a href=\"#\">{html.escape(post['title'], quote=False)}</a></td>\n\t\t</tr>"
+		f"\t\t\t<tr>\n\t\t\t\t<td>{format_date(post['date'])}</td>\n"
+		f"\t\t\t\t<td><a href=\"#\">{html.escape(post['title'], quote=False)}</a></td>\n\t\t\t</tr>"
 	)
 	for post in posts
 )
 
 path = pathlib.Path("index.html")
 path.write_text(
-	re.sub("<table main>.*?</table>", f"<table main>\n{rows}\n\t</table>", path.read_text(), count=1, flags=re.S)
+	re.sub("<table main>.*?</table>", f"<table main>\n{rows}\n\t\t</table>", path.read_text(), count=1, flags=re.S)
 )
