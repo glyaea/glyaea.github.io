@@ -15,6 +15,15 @@ const hyphenateArticle = () => {
 		.forEach(node => node.data = node.data.replace(/[A-Za-z]{4,}/g, word => [...word].join("\u00AD")))
 }
 
+const smartenArticle = () => {
+	const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT)
+	const nodes = []
+	for (let node = walker.nextNode(); node; node = walker.nextNode()) nodes.push(node)
+	nodes
+		.filter(node => !node.parentElement.closest("code, pre, .katex"))
+		.forEach(node => node.data = smartquotes.string(node.data))
+}
+
 const showTable = () => {
 	heading.textContent = homeTitle
 	article.hidden = true
@@ -42,6 +51,7 @@ const showPost = async (path, title) => {
 		code.classList.add("donthyphenate")
 	})
 	article.querySelectorAll(".katex").forEach(math => math.classList.add("donthyphenate"))
+	smartenArticle()
 	hyphenateArticle()
 	heading.textContent = title
 	table.hidden = true
