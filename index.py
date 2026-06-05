@@ -24,9 +24,9 @@ def slugify(title):
 	return "post"
 
 
-def format_date(date):
-	date = datetime.datetime.strptime(date, "%Y-%m-%d %H:%M")
-	return date.strftime("%Y-%m")
+def format_time(time):
+	time = datetime.datetime.strptime(time, "%Y-%m-%d %H:%M")
+	return time.strftime("%Y-%m")
 
 
 def rename_posts(posts):
@@ -56,19 +56,19 @@ rename_posts(posts)
 
 posts = sorted(
 	posts,
-	key=lambda post: post["date"],
+	key=lambda post: post["time"],
 	reverse=True,
 )
 
 rows = "\n".join(
 	(
-		f"\t\t\t<tr>\n\t\t\t\t<td>{format_date(post['date'])}</td>\n"
-		f"\t\t\t\t<td><a href=\"#\">{html.escape(post['title'], quote=False)}</a></td>\n\t\t\t</tr>"
+		f"\t\t\t<tr>\n\t\t\t\t<td>{format_time(post['time'])}</td>\n"
+		f"\t\t\t\t<td><a>{html.escape(post['title'], quote=False)}</a></td>\n\t\t\t</tr>"
 	)
 	for post in posts
 )
 
 path = pathlib.Path("index.html")
 path.write_text(
-	re.sub("<table main>.*?</table>", f"<table main>\n{rows}\n\t\t</table>", path.read_text(), count=1, flags=re.S)
+	re.sub("<table toc>.*?</table>", f"<table toc>\n{rows}\n\t\t</table>", path.read_text(), count=1, flags=re.S)
 )

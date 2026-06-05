@@ -1,6 +1,6 @@
 ---
+time: 2026-05-04 16:30
 title: BatchNorm and LayerNorm
-date: 2026-05-04 16:30
 ---
 
 ![Image](https://miro.medium.com/v2/1*V4rbfeod7qAj7b7x5MuGbg.png)

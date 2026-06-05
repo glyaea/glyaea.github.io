@@ -1,6 +1,6 @@
 ---
+time: 2026-05-23 15:00
 title: Generalising Cantor diagonalisation
-date: 2026-05-23 15:00
 ---
 
 It turns out there exists no surjective function from a set to its power set.

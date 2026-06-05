@@ -5,19 +5,6 @@
 	--font-size: 16px;
 }
 
-.katex {
-	font-size: var(--font-size);
-}
-
-[hidden] {
-	display: none;
-}
-
-nowrap {
-	white-space: nowrap;
-}
-
-
 * {
 	box-sizing: border-box;
 	font-synthesis: none;
@@ -37,9 +24,17 @@ body {
 	width: min(80vw, 640px);
 }
 
+.katex {
+	font-size: var(--font-size);
+}
+
+[hidden] {
+	display: none;
+}
 
 a, a:hover, a:visited {
 	color: black;
+	cursor: pointer;
 	text-decoration: underline;
 	text-decoration-color: silver;
 	text-decoration-thickness: 0.5px;
@@ -70,15 +65,15 @@ dl, ol, ul {
 }
 
 h1 {
-	font-size: 1.5rem;
-}
-
-h2 {
 	font-size: 1.25rem;
 }
 
-h3 {
+h2 {
 	font-size: 1.125rem;
+}
+
+h3 {
+	font-size: 1.0625rem;
 }
 
 hr {
@@ -102,6 +97,10 @@ li + li {
 	margin-top: 0.5rem;
 }
 
+nowrap {
+	white-space: nowrap;
+}
+
 pre {
 	border-radius: 0.5rem;
 	padding: 0.5rem;
@@ -116,22 +115,31 @@ table:not([toc]) th {
 	background: whitesmoke;
 }
 
-table:not([toc]) td, table:not([toc]) th {
+table:not([toc]) td,
+table:not([toc]) th {
 	border: 0.5px solid silver;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 }
 
-td, th {
+td,
+th {
 	padding-bottom: 0.25rem;
 	padding-top: 0.25rem;
 }
 
-td:first-child, th:first-child {
+td:first-child,
+th:first-child {
 	vertical-align: top;
 	white-space: nowrap;
 }
 
-td + td, th + th {
+td + td,
+th + th {
 	padding-left: 2rem;
+}
+
+time {
+	font-size: 0.75rem;
+	margin-top: -1rem;
 }

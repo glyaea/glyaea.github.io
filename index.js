@@ -1,7 +1,8 @@
 const article = document.querySelector("article")
-const heading = document.querySelector("h1")
+const title = document.querySelector("h1")
+const homeTitle = title.textContent
 const table = document.querySelector("table")
-const homeTitle = heading.textContent
+const time = document.querySelector("time")
 
 const slugify = title => title.normalize("NFKD").replace(/[^\x00-\x7F]/g, "").toLowerCase()
 	.replace(/'/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "post"
@@ -25,18 +26,21 @@ const smartenArticle = () => {
 }
 
 const showTable = () => {
-	heading.textContent = homeTitle
+	title.textContent = homeTitle
 	article.hidden = true
 	table.hidden = false
+	time.hidden = true
 }
 
-const showPost = async (path, title) => {
+const showPost = async (path, titleValue, timeValue) => {
 	const markdown = (await (await fetch(path)).text()).replace(/^---[\s\S]*?---\s*/, "")
 	const math = []
 	const text = markdown.replace(/\$\$[\s\S]*?\$\$|\$[^$\n]*?\$/g, value => `@@MATH${math.push(value) - 1}@@`)
+
 	article.innerHTML = marked.parse(text)
 		.replace(/@@MATH(\d+)@@([,.)])/g, (_, i, x) => `<nowrap class="donthyphenate">${math[i]}${x}</nowrap>`)
 		.replace(/@@MATH(\d+)@@/g, (_, i) => math[i])
+
 	renderMathInElement(article, {
 		delimiters: [
 			{left: "$$", right: "$$", display: true},
@@ -46,23 +50,30 @@ const showPost = async (path, title) => {
 		],
 		throwOnError: false,
 	})
+
 	article.querySelectorAll("pre code").forEach(code => {
 		if (window.hljs) hljs.highlightElement(code)
 		code.classList.add("donthyphenate")
 	})
 	article.querySelectorAll(".katex").forEach(math => math.classList.add("donthyphenate"))
+
 	smartenArticle()
 	hyphenateArticle()
-	heading.textContent = title
+
 	table.hidden = true
+
 	article.hidden = false
+	time.hidden = false
+
+	title.textContent = titleValue
+	time.textContent = timeValue
 }
 
 const route = async () => {
 	const slug = location.hash.slice(1)
 	if (slug) {
 		const link = [...document.querySelectorAll("td:nth-child(2) a")].find(link => slugify(link.textContent) === slug)
-		await showPost(`posts/${slug}.md`, link.textContent)
+		await showPost(`posts/${slug}.md`, link.textContent, link.closest("tr").querySelector("td").textContent)
 		return
 	}
 	showTable()
