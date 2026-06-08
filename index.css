@@ -28,6 +28,10 @@ body {
 	font-size: var(--font-size);
 }
 
+.katex-display {
+	margin: 0.5rem 0;
+}
+
 [hidden] {
 	display: none;
 }
@@ -52,12 +56,15 @@ blockquote {
 	padding-left: 1rem;
 }
 
-code {
-	font-family: "SF Mono", monospace !important;
+blockquote blockquote {
+	border-left: 0;
 }
 
-code, pre {
+code {
 	background: whitesmoke !important;
+	border-radius: 0.5rem;
+	font-family: "SF Mono", monospace !important;
+	padding: 0.5rem;
 }
 
 dl, ol, ul {
@@ -94,16 +101,11 @@ li::marker {
 }
 
 li + li {
-	margin-top: 0.5rem;
+	margin-top: 0.25rem;
 }
 
 nowrap {
 	white-space: nowrap;
-}
-
-pre {
-	border-radius: 0.5rem;
-	padding: 0.5rem;
 }
 
 table {

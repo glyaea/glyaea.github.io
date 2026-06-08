@@ -17,7 +17,7 @@ $$
 $$
 > from $S$ to $E$ using only up, down, left, and right moves without backtracking?
 
-Here is a way to reason through it!
+Here is a way to reason through it.
 
 1. Suppose you equip a device $p$ that, at any position $L_{i,j}$, says if $i+j$ is odd or even.
 2. Clearly, any move from any position will flip what $p$ says.

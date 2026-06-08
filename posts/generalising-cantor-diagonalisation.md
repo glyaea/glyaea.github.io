@@ -5,7 +5,7 @@ title: Generalising Cantor diagonalisation
 
 It turns out there exists no surjective function from a set to its power set.
 
-Here is a way to reason through it!
+Here is a way to prove it.
 
 1. Let $X$ be a set.
 2. Suppose there exists surjective function $f:X\to\mathcal{P}(X)$.
