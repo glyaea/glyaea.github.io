@@ -1,7 +1,8 @@
 .SILENT:
-.PHONY: all
+.PHONY: all preview
 
 all:
-	uv run --with jinja2 python -B build.py
-	open http://localhost:8000 &
+	uv run --with jinja2 --with python-frontmatter python -B build.py
+
+preview: all
 	python -m http.server --directory _site

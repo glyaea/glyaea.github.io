@@ -1,4 +1,5 @@
 import datetime
+import frontmatter
 import jinja2
 import pathlib
 import shutil
@@ -14,19 +15,11 @@ def initialize_site(site_path, site_posts_path):
 
 
 def read_post(path):
-	lines = path.read_text().splitlines()
-	metadata_end = lines.index("---", 1) + 1
-	post = {
-		line.split(": ", 1)[0]: line.split(": ", 1)[1]
-		for line in lines[1:metadata_end - 1]
-	}
+	post = frontmatter.load(path)
+	post.content = f"# {post['title']}\n\n{post.content}"
+	post["source"] = frontmatter.dumps(post)
 	post["href"] = f"posts/{path.stem}.html"
 	post["path"] = path
-	post["source"] = "\n".join(
-		lines[:metadata_end]
-		+ ["", f"# {post['title']}"]
-		+ lines[metadata_end:]
-	)
 	post["timestamp"] = post["time"]
 	post["time"] = datetime.datetime.strptime(
 		post["time"],
