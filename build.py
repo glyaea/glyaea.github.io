@@ -53,7 +53,8 @@ def create_site_index(cfg, posts, site_path, site_style_path, template):
 		name=cfg["name"],
 		posts=posts,
 		style=pathlib.Path(os.path.relpath(site_style_path, site_path)).as_posix(),
-		title=cfg["title"]
+		title=cfg["title"],
+		url=cfg["url"]
 	)
 	(site_path / "index.html").write_text(page)
 
@@ -67,7 +68,8 @@ def create_site_posts(cfg, posts, site_posts_path, site_style_path, template):
 		style=pathlib.Path(
 			os.path.relpath(site_style_path, site_posts_path)
 		).as_posix(),
-		title="$pagetitle$"
+		title="$pagetitle$",
+		url=cfg["url"]
 	)
 	with tempfile.TemporaryDirectory() as temporary_path:
 		template_path = pathlib.Path(temporary_path) / "template.html"
