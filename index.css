@@ -36,6 +36,10 @@ body {
 	white-space: nowrap;
 }
 
+.sourceCode {
+	margin: 0 !important;
+}
+
 a,
 a:hover,
 a:visited {
@@ -57,14 +61,6 @@ article {
 blockquote {
 	border-left: 1px solid silver;
 	padding-left: 1rem;
-}
-
-code {
-	background: whitesmoke !important;
-	border-radius: 0.5rem;
-	font-family: "SF Mono", monospace !important;
-	hyphens: none;
-	padding: 0.5rem;
 }
 
 dl, ol, ul {
@@ -100,6 +96,23 @@ li::marker {
 
 li + li {
 	margin-top: 0.25rem;
+}
+
+p:has(code) code,
+pre:has(code) {
+	background: whitesmoke;
+	font-family: "SF Mono", monospace !important;
+	hyphens: none;
+}
+
+p:has(code) code {
+	border-radius: 0.25rem;
+	padding: 0.125rem 0.25rem;
+}
+
+pre:has(code) {
+	border-radius: 0.5rem;
+	padding: 0.5rem;
 }
 
 table {
