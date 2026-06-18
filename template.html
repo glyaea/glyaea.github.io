@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{{ title }}</title>
+		<link rel=icon href=https://unpkg.com/twemoji/assets/svg/2728.svg />
+		{% if pandoc %}
+			$if(highlighting-css)$
+				<style>
+					$highlighting-css$
+				</style>
+			$endif$
+			$if(math)$
+				$math$
+			$endif$
+		{% endif %}
+		<link rel="stylesheet" href="{{ root }}index.css" />
+		<script
+			async
+			data-goatcounter="https://gregorylimeurhen.goatcounter.com/count"
+			src="https://gc.zgo.at/count.js"
+		></script>
+	</head>
+	<body>
+		<h1>{{ name }}</h1>
+		{% if posts is defined %}
+			<table toc>
+				{% for post in posts %}
+				<tr>
+					<td>{{ post.time }}</td>
+					<td><a href="{{ post.href }}">{{ post.title }}</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+		{% else %}
+			<article>
+				{{ article }}
+			</article>
+		{% endif %}
+	</body>
+</html>

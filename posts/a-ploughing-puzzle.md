@@ -3,7 +3,7 @@ time: 2026-04-22 14:55
 title: A ploughing puzzle
 ---
 
-I recently came across the following problem on social media.
+I recently came across the following puzzle on social media.
 
 > Is it possible to plough a plot of land
 $$
@@ -17,7 +17,7 @@ $$
 $$
 > from $S$ to $E$ using only up, down, left, and right moves without backtracking?
 
-Here is a way to reason through it.
+Here is a solution.
 
 1. Suppose you equip a device $p$ that, at any position $L_{i,j}$, says if $i+j$ is odd or even.
 2. Clearly, any move from any position will flip what $p$ says.

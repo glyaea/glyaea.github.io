@@ -1,8 +1,7 @@
-.PHONY: all FORCE
+.SILENT:
+.PHONY: all
 
-all: index.html
-
-index.html: FORCE index.py posts/*.md
-	python -B index.py
-
-FORCE:
+all:
+	uv run --with jinja2 python -B build.py
+	open http://localhost:8000 &
+	python -m http.server --directory _site

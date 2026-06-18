@@ -3,8 +3,6 @@ time: 2026-05-04 16:30
 title: BatchNorm and LayerNorm
 ---
 
-![Image](https://miro.medium.com/v2/1*V4rbfeod7qAj7b7x5MuGbg.png)
-
 Suppose you have data as follows.
 
 |       | Age | Points |
