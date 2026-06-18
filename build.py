@@ -22,10 +22,7 @@ def read_post(path, posts_href):
 	post["href"] = f"{posts_href}/{path.stem}.html"
 	post["path"] = path
 	post["timestamp"] = post["time"]
-	post["time"] = datetime.datetime.strptime(
-		post["time"],
-		"%Y-%m-%d %H:%M"
-	).strftime("%Y-%m-%d")
+	post["time"] = datetime.datetime.strptime(post["time"], "%Y-%m-%d %H:%M").strftime("%Y-%m-%d")
 	return post
 
 
@@ -39,10 +36,7 @@ def create_site_post(post, site_path, template_path):
 	args = ["pandoc"]
 	args.append("--from=markdown-implicit_figures")
 	args.append("--katex=https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/")
-	args.extend([
-		"--output",
-		str(site_path / post["path"].with_suffix(".html").name)
-	])
+	args.extend(["--output", str(site_path / post["path"].with_suffix(".html").name)])
 	args.append(f"--template={template_path}")
 	subprocess.run(args, check=True, input=post["source"], text=True)
 
@@ -54,7 +48,7 @@ def create_site_index(cfg, posts, site_path, site_style_path, template):
 		posts=posts,
 		style=pathlib.Path(os.path.relpath(site_style_path, site_path)).as_posix(),
 		title=cfg["title"],
-		url=cfg["url"]
+		url=cfg["paths"]["url"]
 	)
 	(site_path / "index.html").write_text(page)
 
@@ -65,11 +59,9 @@ def create_site_posts(cfg, posts, site_posts_path, site_style_path, template):
 		favicon=cfg["paths"]["favicon"],
 		name=cfg["name"],
 		pandoc=True,
-		style=pathlib.Path(
-			os.path.relpath(site_style_path, site_posts_path)
-		).as_posix(),
+		style=pathlib.Path(os.path.relpath(site_style_path, site_posts_path)).as_posix(),
 		title="$pagetitle$",
-		url=cfg["url"]
+		url=cfg["paths"]["url"]
 	)
 	with tempfile.TemporaryDirectory() as temporary_path:
 		template_path = pathlib.Path(temporary_path) / "template.html"
@@ -82,12 +74,11 @@ if __name__ == "__main__":
 	with pathlib.Path("config.toml").open("rb") as f:
 		cfg = tomllib.load(f)
 	paths = cfg["paths"]
-	site_paths = paths["site"]
 	posts_path = pathlib.Path(paths["posts"])
-	site_path = pathlib.Path(site_paths["root"])
-	site_posts_path = pathlib.Path(site_paths["posts"])
-	site_style_path = pathlib.Path(site_paths["style"])
+	site_path = pathlib.Path(paths["site"])
+	site_posts_path = site_path / posts_path
 	style_path = pathlib.Path(paths["style"])
+	site_style_path = site_path / style_path
 	template_path = pathlib.Path(paths["template"])
 	posts_href = site_posts_path.relative_to(site_path)
 	post_paths = posts_path.glob("*.md")
@@ -100,10 +91,4 @@ if __name__ == "__main__":
 		trim_blocks=True
 	).get_template(template_path.name)
 	create_site_index(cfg, posts, site_path, site_style_path, template)
-	create_site_posts(
-		cfg,
-		posts,
-		site_posts_path,
-		site_style_path,
-		template
-	)
+	create_site_posts(cfg, posts, site_posts_path, site_style_path, template)
