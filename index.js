@@ -2,7 +2,6 @@ const article = document.querySelector("article")
 const title = document.querySelector("h1")
 const homeTitle = title.textContent
 const table = document.querySelector("table")
-const time = document.querySelector("time")
 
 const slugify = title => title.normalize("NFKD").replace(/[^\x00-\x7F]/g, "").toLowerCase()
 	.replace(/'/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "post"
@@ -29,10 +28,9 @@ const showTable = () => {
 	title.textContent = homeTitle
 	article.hidden = true
 	table.hidden = false
-	time.hidden = true
 }
 
-const showPost = async (path, titleValue, timeValue) => {
+const showPost = async (path, titleValue) => {
 	const markdown = (await (await fetch(path)).text()).replace(/^---[\s\S]*?---\s*/, "")
 	const math = []
 	const text = markdown.replace(/\$\$[\s\S]*?\$\$|\$[^$\n]*?\$/g, value => `@@MATH${math.push(value) - 1}@@`)
@@ -44,9 +42,7 @@ const showPost = async (path, titleValue, timeValue) => {
 	renderMathInElement(article, {
 		delimiters: [
 			{left: "$$", right: "$$", display: true},
-			{left: "$", right: "$", display: false},
-			{left: "\\(", right: "\\)", display: false},
-			{left: "\\[", right: "\\]", display: true},
+			{left: "$", right: "$", display: false}
 		],
 		throwOnError: false,
 	})
@@ -63,17 +59,15 @@ const showPost = async (path, titleValue, timeValue) => {
 	table.hidden = true
 
 	article.hidden = false
-	time.hidden = false
 
 	title.textContent = titleValue
-	time.textContent = timeValue
 }
 
 const route = async () => {
 	const slug = location.hash.slice(1)
 	if (slug) {
 		const link = [...document.querySelectorAll("td:nth-child(2) a")].find(link => slugify(link.textContent) === slug)
-		await showPost(`posts/${slug}.md`, link.textContent, link.closest("tr").querySelector("td").textContent)
+		await showPost(`posts/${slug}.md`, link.textContent)
 		return
 	}
 	showTable()

@@ -16,7 +16,9 @@ BatchNorm (resp. LayerNorm) maps each $X\in\{\{1,3\},\{2,4\}\}$ (resp. $X\in\{\{
 $$
 \gamma_{X}
 \left(
-	\frac{x-\mu_{X}}{\sigma_{X}}\ \middle\vert\ x\in X
+	\frac{x-\mu_{X}}{\sigma_{X}}
+	\;\middle|\;
+	x\in X
 \right)
 +
 \beta_{X}

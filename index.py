@@ -15,7 +15,7 @@ def read_post(path):
 	return post
 
 
-def slugify(title):
+def slugify_post(title):
 	slug = unicodedata.normalize("NFKD", title).encode("ascii", "ignore").decode().lower()
 	slug = re.sub("'", "", slug)
 	slug = re.sub("[^a-z0-9]+", "-", slug).strip("-")
@@ -31,7 +31,7 @@ def format_time(time):
 
 def rename_posts(posts):
 	old_paths = {post["path"] for post in posts}
-	targets = [post["path"].with_name(f"{slugify(post['title'])}.md") for post in posts]
+	targets = [post["path"].with_name(f"{slugify_post(post['title'])}.md") for post in posts]
 	if len(targets) != len(set(targets)):
 		raise SystemExit("Multiple post titles resolve to the same filename.")
 	for post, target in zip(posts, targets):
@@ -53,21 +53,18 @@ def rename_posts(posts):
 
 posts = [read_post(path) for path in pathlib.Path("posts").glob("*.md")]
 rename_posts(posts)
-
 posts = sorted(
 	posts,
 	key=lambda post: post["time"],
 	reverse=True,
 )
-
 rows = "\n".join(
 	(
-		f"\t\t\t<tr>\n\t\t\t\t<td>{format_time(post['time'])}</td>\n"
-		f"\t\t\t\t<td><a>{html.escape(post['title'], quote=False)}</a></td>\n\t\t\t</tr>"
+		f"<tr>\n\t<td>{format_time(post['time'])}</td>\n"
+		f"\t<td><a>{html.escape(post['title'], quote=False)}</a></td>\n</tr>"
 	)
 	for post in posts
 )
-
 path = pathlib.Path("index.html")
 path.write_text(
 	re.sub("<table toc>.*?</table>", f"<table toc>\n{rows}\n\t\t</table>", path.read_text(), count=1, flags=re.S)
