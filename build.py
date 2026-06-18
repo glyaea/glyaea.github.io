@@ -22,6 +22,10 @@ def read_post(path, posts_href):
 	post["href"] = f"{posts_href}/{path.stem}.html"
 	post["path"] = path
 	post["timestamp"] = post["time"]
+
+	if path.stem.startswith("_"):
+		return post
+
 	post["time"] = datetime.datetime.strptime(post["time"], "%Y-%m-%d %H:%M").strftime("%Y-%m-%d")
 	return post
 
@@ -45,7 +49,7 @@ def create_site_index(cfg, posts, site_path, site_style_path, template):
 	page = template.render(
 		favicon=cfg["paths"]["favicon"],
 		name=cfg["name"],
-		posts=posts,
+		posts=[post for post in posts if not post["path"].stem.startswith("_")],
 		style=pathlib.Path(os.path.relpath(site_style_path, site_path)).as_posix(),
 		title=cfg["title"],
 		url=cfg["paths"]["url"]
@@ -73,6 +77,7 @@ def create_site_posts(cfg, posts, site_posts_path, site_style_path, template):
 if __name__ == "__main__":
 	with pathlib.Path("config.toml").open("rb") as f:
 		cfg = tomllib.load(f)
+
 	paths = cfg["paths"]
 	posts_path = pathlib.Path(paths["posts"])
 	site_path = pathlib.Path(paths["site"])
