@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>{{ title }}</title>
-		<link rel=icon href=https://unpkg.com/twemoji/assets/svg/2728.svg />
+		<link rel="icon" href="{{ favicon }}" />
 		{% if pandoc %}
 			$if(highlighting-css)$
 				<style>
@@ -15,7 +15,7 @@
 				$math$
 			$endif$
 		{% endif %}
-		<link rel="stylesheet" href="{{ root }}index.css" />
+		<link rel="stylesheet" href="{{ style }}" />
 		<script
 			async
 			data-goatcounter="https://gregorylimeurhen.goatcounter.com/count"
@@ -23,7 +23,7 @@
 		></script>
 	</head>
 	<body>
-		<h1>{{ name }}</h1>
+		<h1><a href="{{ url }}">{{ name }}</a></h1>
 		{% if posts is defined %}
 			<table toc>
 				{% for post in posts %}

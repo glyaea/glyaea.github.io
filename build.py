@@ -1,6 +1,7 @@
 import datetime
 import frontmatter
 import jinja2
+import os
 import pathlib
 import shutil
 import subprocess
@@ -8,17 +9,17 @@ import tempfile
 import tomllib
 
 
-def initialize_site(site_path, site_posts_path):
+def initialize_site(site_path, site_posts_path, site_style_path, style_path):
 	shutil.rmtree(site_path, ignore_errors=True)
 	site_posts_path.mkdir(parents=True)
-	shutil.copyfile("index.css", site_path / "index.css")
+	shutil.copyfile(style_path, site_style_path)
 
 
-def read_post(path):
+def read_post(path, posts_href):
 	post = frontmatter.load(path)
 	post.content = f"# {post['title']}\n\n{post.content}"
 	post["source"] = frontmatter.dumps(post)
-	post["href"] = f"posts/{path.stem}.html"
+	post["href"] = f"{posts_href}/{path.stem}.html"
 	post["path"] = path
 	post["timestamp"] = post["time"]
 	post["time"] = datetime.datetime.strptime(
@@ -28,13 +29,13 @@ def read_post(path):
 	return post
 
 
-def get_posts(post_paths):
-	posts = [read_post(path) for path in post_paths]
+def get_posts(post_paths, posts_href):
+	posts = [read_post(path, posts_href) for path in post_paths]
 	posts = sorted(posts, key=lambda post: post["timestamp"], reverse=True)
 	return posts
 
 
-def render_post(post, site_path, template_path):
+def create_site_post(post, site_path, template_path):
 	args = ["pandoc"]
 	args.append("--from=markdown-implicit_figures")
 	args.append("--katex=https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/")
@@ -46,36 +47,61 @@ def render_post(post, site_path, template_path):
 	subprocess.run(args, check=True, input=post["source"], text=True)
 
 
-if __name__ == "__main__":
-	site_path = pathlib.Path("_site")
-	site_posts_path = site_path / "posts"
-	posts_path = pathlib.Path("posts")
-	post_paths = posts_path.glob("*.md")
-	initialize_site(site_path, site_posts_path)
-	posts = get_posts(post_paths)
-	template = jinja2.Environment(
-		autoescape=True,
-		loader=jinja2.FileSystemLoader("."),
-		lstrip_blocks=True,
-		trim_blocks=True
-	).get_template("template.html")
-	with pathlib.Path("config.toml").open("rb") as f:
-		config = tomllib.load(f)
+def create_site_index(cfg, posts, site_path, site_style_path, template):
 	page = template.render(
-		name=config["name"],
+		favicon=cfg["paths"]["favicon"],
+		name=cfg["name"],
 		posts=posts,
-		title=config["title"]
+		style=pathlib.Path(os.path.relpath(site_style_path, site_path)).as_posix(),
+		title=cfg["title"]
 	)
 	(site_path / "index.html").write_text(page)
+
+
+def create_site_posts(cfg, posts, site_posts_path, site_style_path, template):
 	pandoc_template = template.render(
 		article="$body$",
-		name=config["name"],
+		favicon=cfg["paths"]["favicon"],
+		name=cfg["name"],
 		pandoc=True,
-		root="../",
+		style=pathlib.Path(
+			os.path.relpath(site_style_path, site_posts_path)
+		).as_posix(),
 		title="$pagetitle$"
 	)
 	with tempfile.TemporaryDirectory() as temporary_path:
 		template_path = pathlib.Path(temporary_path) / "template.html"
 		template_path.write_text(pandoc_template)
 		for post in posts:
-			render_post(post, site_posts_path, template_path)
+			create_site_post(post, site_posts_path, template_path)
+
+
+if __name__ == "__main__":
+	with pathlib.Path("config.toml").open("rb") as f:
+		cfg = tomllib.load(f)
+	paths = cfg["paths"]
+	site_paths = paths["site"]
+	posts_path = pathlib.Path(paths["posts"])
+	site_path = pathlib.Path(site_paths["root"])
+	site_posts_path = pathlib.Path(site_paths["posts"])
+	site_style_path = pathlib.Path(site_paths["style"])
+	style_path = pathlib.Path(paths["style"])
+	template_path = pathlib.Path(paths["template"])
+	posts_href = site_posts_path.relative_to(site_path)
+	post_paths = posts_path.glob("*.md")
+	initialize_site(site_path, site_posts_path, site_style_path, style_path)
+	posts = get_posts(post_paths, posts_href)
+	template = jinja2.Environment(
+		autoescape=True,
+		loader=jinja2.FileSystemLoader(template_path.parent),
+		lstrip_blocks=True,
+		trim_blocks=True
+	).get_template(template_path.name)
+	create_site_index(cfg, posts, site_path, site_style_path, template)
+	create_site_posts(
+		cfg,
+		posts,
+		site_posts_path,
+		site_style_path,
+		template
+	)

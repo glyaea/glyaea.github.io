@@ -36,7 +36,9 @@ body {
 	white-space: nowrap;
 }
 
-a, a:hover, a:visited {
+a,
+a:hover,
+a:visited {
 	color: black;
 	cursor: pointer;
 	text-decoration: underline;
@@ -71,6 +73,12 @@ dl, ol, ul {
 
 h1:not(article h1) {
 	font-size: 1.25rem;
+}
+
+h1:not(article h1) a,
+h1:not(article h1) a:hover,
+h1:not(article h1) a:visited {
+	text-decoration: none;
 }
 
 hr {
