@@ -6,6 +6,8 @@ all:
 	uv run --with jinja2 --with python-frontmatter python -B build.py
 
 cv:
+	which node
+	node -v
 	npx md-to-pdf cv.md \
 		--stylesheet cv.css \
 		--body-class markdown-body \
