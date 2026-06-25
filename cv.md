@@ -20,8 +20,8 @@
 
 ### Proficiencies
 
-* **Languages.** C, CSS, Dockerfile, HTML, Java, JavaScript, Makefile, Python, Shell, SnekScript, Swift, TeX.
-* **Tools.** AWS, Azure, Cloudflare, Docker, FAISS, FastAPI, Figma, Firebase, Flask, Git(Hub), Gradio, Hugging Face, LangChain, llama.cpp, Matplotlib, MLX, Next.js, NumPy, Ollama, OpenRouter, Open WebUI, Paint.NET, PyTorch, Qdrant, React, SQLite, Shadcn, Streamlit, Tailwind, TensorFlow, Vercel, Whisper, n8n, pandas, scikit-learn.
+* **Languages.** C, CSS, Dockerfile, HTML, Java, JavaScript, Makefile, Python, Shell, SnekScript, Swift, (La)TeX.
+* **Tools.** AWS, Azure, Cloudflare, Docker, FAISS, FastAPI, Figma, Firebase, Flask, Git(Hub), Gradio, Hugging Face, LangChain, llama.cpp, Matplotlib, MLX, Next.js, NumPy, Ollama, OpenRouter, Open WebUI, Paint.NET, PyTorch, Qdrant, React, SQL, Shadcn, Streamlit, Tailwind, TensorFlow, Vercel, Whisper, n8n, pandas, scikit-learn.
 
 ### Projects
 
