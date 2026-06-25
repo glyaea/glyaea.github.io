@@ -27,34 +27,30 @@
 
 **[PDPal](https://capstoneshowcase.sutd.edu.sg/project/proj-07-asiacloud-ai4pdpa)**, AI Legal Assistant, 2026.
 1. Crafted backend architecture by defining targets, running experiments, and reasoning over trade-offs.
-2. Tested and saw system outperform GPT-5.4 by 4.5% and Gemini 3.1 Pro by 9.1% on YPDYC oracle@3.
+2. Tested and observed system outperform GPT-5.4 by 4.5% and Gemini 3.1 Pro by 9.1% on YPDYC oracle@3.
 3. Improved frontend accessibility by designing responsive multilingual visual components.
-4. Validated frontend accessibility with 73% of users fully recommending the product in preliminary studies.
+4. Validated frontend accessibility with 73% of users fully recommending product in preliminary studies.
 
 **[SUTD404](https://sutd404.vercel.app)**, SUTD Room Address Lookup Tool, 2026.
 1. Trained Chinchilla-optimal Nanochat-style transformers to rewrite noisy SUTD room names.
-2. Tested and saw model outperform SUTD Assistive Maps on test subset accuracy.
+2. Tested and observed model outperform SUTD Assistive Maps on test subset accuracy.
 3. Optimised inference smoothness and speed by making it cached, debounced, and incremental.
 
 **Snekboros**, "Vision World Models for Snake Playing", 2026.
 1. Trained SIGReg-regularised convolutional GRU world models to play 1P Snake from 4x4 grid images.
-2. Tested and saw model outperform random baseline by 89% on test set score.
-3. Demonstrated the effect of planning horizon and sample count on survival.
+2. Tested and observed model outperform random baseline by 89% on test set score.
+3. Observed effect of planning horizon and sample count on test set score.
 
 **Vibe Decoding**, "An Unexpected Expected Next-Token Rule for Language Models", 2025.
 1. Proposed aligning next-token embeddings with their expectation.
-2. Tested Qwen 2.5 0.5B, Gemma 2 4B, and Llama 3.1 8B on BoolQ, NumerSense, PG-19, and WikiText-2.
-3. Saw macro F1 and MRR of models scale positively with vibe strength on BoolQ and NumerSense.
-4. Saw PPL of models negatively with vibe strength on PG-19 and WikiText-2.
-5. Characterised asymptotic runtime of rule.
-6. Determined interval of vibe strength at which rule becomes greedy.
+2. Tested and observed Qwen, Gemma, and Llama models improve on BoolQ and NumerSense macro F1 by up to 7.7%.
+3. Characterised asymptotic runtime and greedy interval of rule.
 
 **BLIPS Regularisation**, "Regularisation with Buffered Linear Interpolation by Positional Similarity", 2025.
 1. Proposed using buffer to lerp between recent and current feature maps by positional similarity.
-2. Made spectrogram images and resampled envelopes from STEAD subset by applying STFTs and Hilbert transforms.
-3. Trained and tested CNNs, RNNs, and ViTs on train subset.
-4. Tested and saw best ViT achieve 99.6% macro F1 on test subset.
-5. Interpreted failures of best ViT by visualising its attention on false positives and negatives using Grad-CAM.
+2. Trained and tested CNNs, RNNs, and ViTs on train subset.
+3. Tested and observed best ViT achieve 99.6% macro F1 on test subset.
+4. Interpreted failures of best ViT by visualising Grad-CAM attention on incorrect classifications.
 
 ### Recognition
 
