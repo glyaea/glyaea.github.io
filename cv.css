@@ -1,10 +1,13 @@
 @import url("https://cdn.jsdelivr.net/npm/github-markdown-css@5/github-markdown-light.css");
+@import url("https://fonts.googleapis.com/css2?family=Lora");
 
 .markdown-body {
-	font-family: "SF Pro";
+	font-family: "Lora";
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 1.15;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
 }
 
 .markdown-body dl,
