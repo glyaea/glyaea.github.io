@@ -1,4 +1,4 @@
-Gregory Lim Eu Rhen
+**Gregory Lim Eu Rhen**
 ⋅ [gregory_lim@mymail.sutd.edu.sg](mailto:gregory_lim@mymail.sutd.edu.sg)
 ⋅ [linkedin.com/in/gregorylimeurhen](https://linkedin.com/in/gregorylimeurhen)
 ⋅ [github.com/glyaea](https://github.com/glyaea)

@@ -1,8 +1,9 @@
 @import url("https://cdn.jsdelivr.net/npm/github-markdown-css@5/github-markdown-light.css");
 
 .markdown-body {
-	font-family: "Helvetica";
+	font-family: "SF Pro";
 	font-size: 12px;
+	font-weight: 400;
 	line-height: 1.15;
 }
 
