@@ -12,4 +12,5 @@
 
 - Edit `config.toml` to configure site.
 - Run `make` to build site.
+- Run `make cv` to build CV.
 - Run `make preview` to build and preview site.
