@@ -13,6 +13,7 @@ def initialize_site(site_path, site_posts_path, site_style_path, style_path):
 	shutil.rmtree(site_path, ignore_errors=True)
 	site_posts_path.mkdir(parents=True)
 	shutil.copyfile(style_path, site_style_path)
+	shutil.copyfile("cv.pdf", site_path / "cv.pdf")
 
 
 def read_post(path, posts_href):
