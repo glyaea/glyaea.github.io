@@ -2,7 +2,7 @@
 
 ## Syntax Highlighting
 
-### VSCode
+### Visual Studio Code
 
 1. Install extension `hongquan/dragon-jinja`.
 2. Open User Settings (JSON).
@@ -11,6 +11,5 @@
 # Usage
 
 - Edit `config.toml` to configure site.
-- Run `make` to build site.
 - Run `make cv` to build CV.
-- Run `make preview` to build and preview site.
+- Run `make posts` to build posts.

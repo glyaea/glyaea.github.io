@@ -83,9 +83,10 @@ if __name__ == "__main__":
 	posts_path = pathlib.Path(paths["posts"])
 	site_path = pathlib.Path(paths["site"])
 	site_posts_path = site_path / posts_path
-	style_path = pathlib.Path(paths["style"])
+	template_paths = [pathlib.Path(template) for template in paths["template"]]
+	style_path = next(path for path in template_paths if path.suffix == ".css")
 	site_style_path = site_path / style_path
-	template_path = pathlib.Path(paths["template"])
+	template_path = next(path for path in template_paths if path.suffix == ".html")
 	posts_href = site_posts_path.relative_to(site_path)
 	post_paths = posts_path.glob("*.md")
 	initialize_site(site_path, site_posts_path, site_style_path, style_path)

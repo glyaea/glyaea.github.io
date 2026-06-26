@@ -15,6 +15,6 @@ jobs:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v8.1.0
       - uses: pandoc/actions/setup@v1
-      - run: make
+      - run: make all
       - uses: actions/upload-pages-artifact@v5.0.0
       - uses: actions/deploy-pages@v5

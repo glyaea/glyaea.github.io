@@ -6,8 +6,8 @@
 ### Education
 
 **Singapore University of Technology and Design**, Bachelor of Engineering in Computer Science, 2026.
-* **Cocurriculars**: Galois Group Mathematics Society, Google Developer Student Club (3DC).
-* **Concentrations**: Minor in Artificial Intelligence, Specialisation in Visual Analytics and Computing.
+- **Cocurriculars**: Galois Group Mathematics Society, Google Developer Student Club (3DC).
+- **Concentrations**: Minor in Artificial Intelligence, Specialisation in Visual Analytics and Computing.
 
 ### Experiences
 
@@ -20,8 +20,8 @@
 
 ### Proficiencies
 
-* **Languages.** C, CSS, Dockerfile, HTML, Java, JavaScript, Makefile, Python, Shell, SnekScript, Swift, (La)TeX.
-* **Tools.** AWS, Azure, Cloudflare, Docker, FAISS, FastAPI, Figma, Firebase, Flask, Git(Hub), Gradio, Hugging Face, LangChain, llama.cpp, Matplotlib, MLX, Next.js, NumPy, Ollama, OpenRouter, Open WebUI, Paint.NET, PyTorch, Qdrant, React, SQL, Shadcn, Streamlit, Tailwind, TensorFlow, Vercel, Whisper, n8n, pandas, scikit-learn.
+- **Languages.** C, CSS, Dockerfile, HTML, Java, JavaScript, Makefile, Python, Shell, SnekScript, Swift, (La)TeX.
+- **Tools.** AWS, Azure, Cloudflare, Docker, FAISS, FastAPI, Figma, Firebase, Flask, Git(Hub), Gradio, Hugging Face, LangChain, llama.cpp, Matplotlib, MLX, Next.js, NumPy, Ollama, OpenRouter, Open WebUI, Paint.NET, PyTorch, Qdrant, React, SQL, Shadcn, Streamlit, Tailwind, TensorFlow, Vercel, Whisper, n8n, pandas, scikit-learn.
 
 ### Projects
 
@@ -54,9 +54,9 @@
 
 ### Recognition
 
-* Showcased MLOps Projects, Singapore University of Technology and Design, 2026.
-* Showcased Deep Learning Projects, Singapore University of Technology and Design, 2025.
-* Information Systems Prize, Singapore University of Technology and Design & Singtel, 2024.
-* [Physical World Design 1D Award](https://web.archive.org/web/20231029123705/https:/smt.sutd.edu.sg/education-and-design-awards/physical-world-design-1d-award), Singapore University of Technology and Design, 2022.
-* Malay (Special Programme) Top in Cohort Award, Temasek Secondary School, 2018.
-* Mathematics and Science Book Prize, Temasek Secondary School, 2017.
+- Showcased MLOps Projects, Singapore University of Technology and Design, 2026.
+- Showcased Deep Learning Projects, Singapore University of Technology and Design, 2025.
+- Information Systems Prize, Singapore University of Technology and Design & Singtel, 2024.
+- [Physical World Design 1D Award](https://web.archive.org/web/20231029123705/https:/smt.sutd.edu.sg/education-and-design-awards/physical-world-design-1d-award), Singapore University of Technology and Design, 2022.
+- Malay (Special Programme) Top in Cohort Award, Temasek Secondary School, 2018.
+- Mathematics and Science Book Prize, Temasek Secondary School, 2017.
