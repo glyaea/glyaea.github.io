@@ -12,6 +12,9 @@
 	padding: 0;
 }
 
+div.sourceCode { margin: 0; }
+span.katex { font-size: var(--font-size); }
+
 body {
 	font-family: "Lora", serif;
 	font-size: var(--font-size);
@@ -22,9 +25,6 @@ body {
 	margin: 4rem auto;
 	width: min(80vw, 640px);
 }
-
-div.sourceCode { margin: 0 !important; }
-span.katex { font-size: var(--font-size); }
 
 a,
 a:hover,
@@ -49,9 +49,8 @@ blockquote {
 	padding-left: 1rem;
 }
 
-code,
-pre {
-	font-family: "SF Mono", monospace !important;
+code {
+	font-family: "SF Mono";
 	hyphens: none;
 }
 
@@ -61,16 +60,6 @@ ul {
 	padding-left: 1.75rem;
 }
 
-h1:not(article h1) {
-	font-size: 1.25rem;
-}
-
-h1:not(article h1) a,
-h1:not(article h1) a:hover,
-h1:not(article h1) a:visited {
-	text-decoration: none;
-}
-
 hr {
 	border: 0;
 	border-top: 0.5px solid silver;
@@ -78,6 +67,11 @@ hr {
 
 img {
 	max-width: 100%;
+}
+
+img[icon] {
+	height: 1rem;
+	width: 1rem;
 }
 
 li {

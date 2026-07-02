@@ -40,7 +40,7 @@ def get_posts(post_paths, posts_href):
 def create_site_post(post, site_path, template_path):
 	args = ["pandoc"]
 	args.append("--from=markdown-implicit_figures")
-	args.append("--highlight-style=monochrome")
+	args.append("--highlight-style=pygments")
 	args.append("--katex=https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/")
 	args.extend(["--output", str(site_path / post["path"].with_suffix(".html").name)])
 	args.append(f"--template={template_path}")
