@@ -76,23 +76,18 @@ if __name__ == "__main__":
 	with pathlib.Path("config.toml").open("rb") as f:
 		cfg = tomllib.load(f)
 
-	paths = cfg["paths"]
-	posts_path = pathlib.Path(paths["posts"])
-	site_path = pathlib.Path(paths["site"])
+	posts_path = pathlib.Path("posts")
+	site_path = pathlib.Path("_site")
 	site_posts_path = site_path / posts_path
-	template_paths = [pathlib.Path(template) for template in paths["template"]]
-	style_path = next(path for path in template_paths if path.suffix == ".css")
+	style_path = pathlib.Path("template.css")
 	site_style_path = site_path / style_path
-	template_path = next(path for path in template_paths if path.suffix == ".xml")
-	posts_href = site_posts_path.relative_to(site_path)
-	post_paths = posts_path.glob("*.md")
 	initialize_site(site_path, site_posts_path, site_style_path, style_path)
-	posts = get_posts(post_paths, posts_href)
+	posts = get_posts(posts_path.glob("*.md"), posts_path.as_posix())
 	template = jinja2.Environment(
 		autoescape=True,
-		loader=jinja2.FileSystemLoader(template_path.parent),
+		loader=jinja2.FileSystemLoader("."),
 		lstrip_blocks=True,
 		trim_blocks=True
-	).get_template(template_path.name)
+	).get_template("template.xml")
 	create_site_index(cfg, posts, site_path, site_style_path, template)
 	create_site_posts(cfg, posts, site_posts_path, site_style_path, template)
