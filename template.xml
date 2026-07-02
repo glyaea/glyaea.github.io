@@ -21,6 +21,11 @@
 			data-goatcounter="https://gregorylimeurhen.goatcounter.com/count"
 			src="https://gc.zgo.at/count.js"
 		></script>
+		<script defer>
+			fetch("https://gregorylimeurhen.goatcounter.com/counter/TOTAL.json")
+				.then(r => r.json())
+				.then(r => console.log(r.count))
+		</script>
 	</head>
 	<body>
 		<img icon src="{{ icon }}" />
@@ -36,6 +41,5 @@
 			{{ article }}
 		</article>
 		{% endif %}
-		<img src="https://gregorylimeurhen.goatcounter.com/counter/TOTAL.svg?no_branding" />
 	</body>
 </html>
