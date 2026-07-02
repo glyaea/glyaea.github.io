@@ -40,5 +40,11 @@
 				{{ article }}
 			</article>
 		{% endif %}
+		<counter></counter>
+		<script>
+			fetch("https://gregorylimeurhen.goatcounter.com/counter/TOTAL.json")
+				.then(r => r.json())
+				.then(r => document.querySelector("counter").textContent = r.count)
+		</script>
 	</body>
 </html>

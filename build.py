@@ -40,6 +40,7 @@ def get_posts(post_paths, posts_href):
 def create_site_post(post, site_path, template_path):
 	args = ["pandoc"]
 	args.append("--from=markdown-implicit_figures")
+	args.append("--highlight-style=monochrome")
 	args.append("--katex=https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/")
 	args.extend(["--output", str(site_path / post["path"].with_suffix(".html").name)])
 	args.append(f"--template={template_path}")
@@ -86,7 +87,7 @@ if __name__ == "__main__":
 	template_paths = [pathlib.Path(template) for template in paths["template"]]
 	style_path = next(path for path in template_paths if path.suffix == ".css")
 	site_style_path = site_path / style_path
-	template_path = next(path for path in template_paths if path.suffix == ".html")
+	template_path = next(path for path in template_paths if path.suffix == ".xml")
 	posts_href = site_posts_path.relative_to(site_path)
 	post_paths = posts_path.glob("*.md")
 	initialize_site(site_path, site_posts_path, site_style_path, style_path)

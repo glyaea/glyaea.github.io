@@ -1,13 +1,20 @@
-@import url("https://cdn.jsdelivr.net/npm/github-markdown-css@5/github-markdown-light.css");
-
-.markdown-body {
-	font-family: "Helvetica";
-	font-size: 11px;
-	line-height: 1.15;
+@page {
+	margin: 0.5in;
+	size: A4;
 }
 
-.markdown-body dl,
-.markdown-body ol,
-.markdown-body ul {
-	margin-top: -8px;
+body {
+	font-family: Arial;
+	font-size: 12px;
+}
+
+a,
+a:hover,
+a:visited {
+	color: black;
+	cursor: pointer;
+	text-decoration: underline;
+	text-decoration-color: silver;
+	text-decoration-thickness: 0.5px;
+	text-underline-offset: 2px;
 }
