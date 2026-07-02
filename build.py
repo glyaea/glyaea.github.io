@@ -50,11 +50,9 @@ def create_site_post(post, site_path, template_path):
 def create_site_index(cfg, posts, site_path, site_style_path, template):
 	page = template.render(
 		favicon=cfg["paths"]["favicon"],
-		name=cfg["name"],
 		posts=[post for post in posts if not post["path"].stem.startswith("_")],
 		style=pathlib.Path(os.path.relpath(site_style_path, site_path)).as_posix(),
-		title=cfg["title"],
-		url=cfg["paths"]["url"]
+		title=cfg["title"]
 	)
 	(site_path / "index.html").write_text(page)
 
@@ -63,11 +61,9 @@ def create_site_posts(cfg, posts, site_posts_path, site_style_path, template):
 	pandoc_template = template.render(
 		article="$body$",
 		favicon=cfg["paths"]["favicon"],
-		name=cfg["name"],
 		pandoc=True,
 		style=pathlib.Path(os.path.relpath(site_style_path, site_posts_path)).as_posix(),
-		title="$pagetitle$",
-		url=cfg["paths"]["url"]
+		title="$pagetitle$"
 	)
 	with tempfile.TemporaryDirectory() as temporary_path:
 		template_path = pathlib.Path(temporary_path) / "template.html"

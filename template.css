@@ -86,17 +86,28 @@ li + li {
 	margin-top: 0.25rem;
 }
 
+toc {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	column-gap: 2rem;
+	padding-left: 0;
+}
+
+/* dl dd {
+	margin-left: 0;
+} */
+
 table {
 	border-collapse: collapse;
 	width: 100%;
 }
 
-table:not([toc]) th {
+th {
 	background: whitesmoke;
 }
 
-table:not([toc]) td,
-table:not([toc]) th {
+td,
+th {
 	border: 0.5px solid silver;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;

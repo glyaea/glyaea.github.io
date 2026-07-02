@@ -1,4 +1,3 @@
-name = "glyaea"
 title = "glyaea"
 
 [paths]
@@ -6,4 +5,3 @@ favicon = "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2728.svg"
 posts = "posts"
 site = "_site"
 template = ["template.xml", "template.css"]
-url = "https://glyaea.github.io"

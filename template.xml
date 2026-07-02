@@ -23,22 +23,18 @@
 		></script>
 	</head>
 	<body>
-		<a href="#">
-			<img icon src="{{ favicon }}" />
-		</a>
+		<img icon src="{{ favicon }}" />
 		{% if posts is defined %}
-			<table toc>
-				{% for post in posts %}
-				<tr>
-					<td>{{ post.time }}</td>
-					<td><a href="{{ post.href }}">{{ post.title }}</a></td>
-				</tr>
-				{% endfor %}
-			</table>
+		<toc>
+			{% for post in posts %}
+			<p>{{ post.time }}</p>
+			<a href="{{ post.href }}">{{ post.title }}</a>
+			{% endfor %}
+		</toc>
 		{% else %}
-			<article>
-				{{ article }}
-			</article>
+		<article>
+			{{ article }}
+		</article>
 		{% endif %}
 		<counter></counter>
 		<script>
