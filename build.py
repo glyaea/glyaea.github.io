@@ -49,7 +49,7 @@ def create_site_post(post, site_path, template_path):
 
 def create_site_index(cfg, posts, site_path, site_style_path, template):
 	page = template.render(
-		favicon=cfg["paths"]["favicon"],
+		icon=cfg["paths"]["icon"],
 		posts=[post for post in posts if not post["path"].stem.startswith("_")],
 		style=pathlib.Path(os.path.relpath(site_style_path, site_path)).as_posix(),
 		title=cfg["title"]
@@ -60,7 +60,7 @@ def create_site_index(cfg, posts, site_path, site_style_path, template):
 def create_site_posts(cfg, posts, site_posts_path, site_style_path, template):
 	pandoc_template = template.render(
 		article="$body$",
-		favicon=cfg["paths"]["favicon"],
+		icon=cfg["paths"]["icon"],
 		pandoc=True,
 		style=pathlib.Path(os.path.relpath(site_style_path, site_posts_path)).as_posix(),
 		title="$pagetitle$"
