@@ -3,27 +3,44 @@ time: 2026-05-23 15:00
 title: Cantor's theorem
 ---
 
-**Theorem**. There exists no surjective function from a set to its power set.
+It turns out there is no surjective function from a set to its power set.
 
-*Proof*. Suppose there exists such a magical surjective function
+To see why, assume there exists such a magical surjective function
 $$
 	f:X\to\mathcal{P}(X)
 $$
-where $X$ is a set.
-Then, let $D=\{x\in X\mid x\notin f(x)\}$.
-By the definition of surjectivity:
+where $X$ is a set. Further, let $D=\{x\in X\mid x\notin f(x)\}$.
+
+Since $f$ is surjective, by the definition of surjectivity, we have:
 $$
 	\forall y\in\mathcal{P}(X),\,
 	\exists x\in X\,(
 		f(x)=y
 	)
 $$
-In particular, since $D\in\mathcal{P}(X)$:
+
+Since $D\in\mathcal{P}(X)$, we simply have:
 $$
-	\exists c\in X\,(
-		f(c)=D
+	\exists x\in X\,(
+		f(x)=D
 	)
 $$
-Is $c\in D$?
-By the definition of $D$, if $c\in D$, then $c\notin f(c)=D$.
-This is contradictory, so our original supposition is false.
+
+Let $d\in X$. Then, we have:
+$$
+	f(d)=D
+$$
+
+Now consider: is $d\in D$?
+
+If $d\in D$, then by the definition of $D$, we have:
+$$
+	d\notin f(d)
+$$
+
+Since $f(d)=D$, we have:
+$$
+	d\notin D
+$$
+
+It is impossible to have $d\notin D$ if $d\in D$, so our assumption that $f$ exists is false.
