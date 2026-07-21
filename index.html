@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Gregory Lim's Blog</title>
+	<title>Gregory Lim</title>
 	<link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2728.svg">
 	<link rel="stylesheet" href="index.css">
 	<script
@@ -15,20 +15,22 @@
 		defer
 		src="https://cdn.jsdelivr.net/npm/marked@18.0.6/lib/marked.umd.js"
 	></script>
+	<script defer src="index.js"></script>
 	<script
 		defer
 		src="https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-mml-chtml.js"
 	></script>
-	<script defer src="index.js"></script>
 </head>
 <body>
 	<nav>
-		<p>🌱</p>
+		<p>✨</p>
 		<a><kbd>home</kbd></a>
 		<a><kbd>blog</kbd></a>
 	</nav>
 	<home>
-		<p>Updates on my research</p>
+		<center>
+			<img src="https://media.tenor.com/d8gLmta1MwcAAAAm/fadding-thumbs-up.webp">
+		</center>
 	</home>
 	<blog hidden>
 		<dl>
@@ -52,11 +54,5 @@
 		</dl>
 		<article></article>
 	</blog>
-	<script>
-		window.MathJax = {tex: {inlineMath: {"[+]": [["$", "$"]]}}}
-		fetch("https://gregorylimeurhen.goatcounter.com/counter/TOTAL.json")
-			.then(r => r.json())
-			.then(r => document.querySelector("counter").textContent = r.count)
-	</script>
 </body>
 </html>

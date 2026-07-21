@@ -1,3 +1,9 @@
+window.MathJax = {tex: {inlineMath: {"[+]": [["$", "$"]]}}};
+
+fetch("https://gregorylimeurhen.goatcounter.com/counter/TOTAL.json")
+	.then(response => response.json())
+	.then(response => console.log(response.count));
+
 const article = document.querySelector("article");
 const blog = document.querySelector("blog");
 const postList = document.querySelector("dl");
@@ -25,7 +31,13 @@ marked.use({
 				return token.raw;
 			}
 		}
-	]
+	],
+	hooks: {
+		preprocess(markdown) {
+			return markdown.replace(/\$\$[\s\S]+?\$\$|\$[^$\n]+?\$/g, math =>
+				math.replaceAll("\\", "&#92;"));
+		}
+	}
 });
 for (const anchor of document.querySelectorAll("nav a")) {
 	anchor.onclick = () => {
