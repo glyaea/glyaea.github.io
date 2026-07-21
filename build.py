@@ -23,7 +23,7 @@ if __name__ == "__main__":
 		post = read_post(post_path)
 		slug_path = post_path.with_name(f"{create_slug(post['name'])}.md")
 		if slug_path.exists() and not slug_path.samefile(post_path):
-			raise FileExistsError(f"{slug_path} already exists")
+			raise FileExistsError()
 		post_path.rename(slug_path)
 		posts.append(post)
 	posts.sort(key=lambda post: post["name"])
