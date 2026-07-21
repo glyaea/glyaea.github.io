@@ -29,8 +29,8 @@ This is immediate.
 > **Claim 1.2**. No minimal total dominating set can have $4$ nodes or more.
 
 For a minimal total dominating set with at least $4$ nodes, there are 2 cases:
-- **Case 1**. The nodes are **connected**.
-- **Case 2**. The nodes are **disconnected**.
+- **Case 1**. The nodes are connected.
+- **Case 2**. The nodes are disconnected.
 
 For Case 1, if a node $n$ has $3$ or more neighbours among the nodes, then $n$ and $3$ of its neighbours form a star, since the neighbours cannot pair with each other.
 Otherwise, the nodes form a line or a cycle.
