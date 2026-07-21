@@ -1,0 +1,76 @@
+a,
+a:hover,
+a:visited {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a,
+a:visited {
+	color: #4285F4;
+}
+
+blockquote {
+	border-left: 1px solid silver;
+	padding-left: 1rem;
+}
+
+code:not(pre code),
+pre:has(code) {
+	background: whitesmoke;
+	border: 0.5px solid silver;
+	font-family: "SF Mono" !important;
+	hyphens: none;
+}
+
+code:not(pre code) {
+	border-radius: 0.25rem;
+	padding: 0 0.25rem;
+	white-space: nowrap;
+}
+
+pre:has(code) {
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+
+hr {
+	border: 0;
+	border-top: 0.5px solid silver;
+}
+
+kbd {
+	background-color: whitesmoke;
+	border: 1px solid silver;
+	border-radius: 0.75rem;
+	box-shadow: inset 0 -1px 0 silver;
+	display: inline-block;
+	font-family: "SF Mono";
+	font-size: 0.75rem;
+	padding: 0.25rem 0.5rem;
+}
+
+li + li,
+li ul {
+	margin-top: 0.5rem;
+}
+
+li pre:has(code) {
+	margin-block-end: 0.5rem;
+	margin-block-start: 0.5rem;
+}
+
+mjx-container {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+mjx-container:not([display]) {
+	font-size: 1rem !important;
+}
+
+ol,
+ul {
+	list-style-position: outside;
+	margin-left: 1rem;
+}
