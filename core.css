@@ -3,17 +3,13 @@
 a,
 a:hover,
 a:visited {
+	color: blue;
 	cursor: pointer;
 	text-decoration: none;
 }
 
-a,
-a:visited {
-	color: blue;
-}
-
 a:hover {
-	color: darkblue;
+	text-decoration: underline;
 }
 
 blockquote {

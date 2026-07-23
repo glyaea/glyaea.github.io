@@ -1,4 +1,8 @@
 import {marked} from "https://cdn.jsdelivr.net/npm/marked@18.0.6/lib/marked.esm.js";
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+mermaid.initialize({startOnLoad: false});
+await mermaid.run();
 
 window.MathJax = {tex: {inlineMath: {"[+]": [["$", "$"]]}}};
 
