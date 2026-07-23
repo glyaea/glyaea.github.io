@@ -34,9 +34,9 @@ if __name__ == "__main__":
 	item_line = next(line for line in list_lines if line.strip())
 	item_indent = item_line[:len(item_line) - len(item_line.lstrip())]
 	list_indent = index_source[index_source.rfind("\n", 0, list_end) + 1:list_end]
-	post_list = "\n\n".join(
+	post_list = "\n".join(
 		f"{item_indent}<dt>{post['date']}</dt>\n"
-		f"{item_indent}<dd><a>{html.escape(post['name'])}</a></dd>"
+		f"{item_indent}<dd><a>{html.escape(post['name'], quote=False)}</a></dd>"
 		for post in posts
 	)
 	list_source = f"\n{post_list}\n{list_indent}"

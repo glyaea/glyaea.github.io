@@ -1,4 +1,14 @@
+import {marked} from "https://cdn.jsdelivr.net/npm/marked@18.0.6/lib/marked.esm.js";
+
 window.MathJax = {tex: {inlineMath: {"[+]": [["$", "$"]]}}};
+
+await new Promise((resolve, reject) =>
+	document.head.append(Object.assign(document.createElement("script"), {
+		onerror: reject,
+		onload: resolve,
+		src: "https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-mml-chtml.js"
+	}))
+);
 
 fetch("https://gregorylimeurhen.goatcounter.com/counter/TOTAL.json")
 	.then(response => response.json())
@@ -6,7 +16,8 @@ fetch("https://gregorylimeurhen.goatcounter.com/counter/TOTAL.json")
 
 const article = document.querySelector("article");
 const blog = document.querySelector("blog");
-const postList = document.querySelector("dl");
+const posts = document.querySelector("dl");
+
 marked.use({
 	extensions: [
 		{
@@ -39,12 +50,13 @@ marked.use({
 		}
 	}
 });
-for (const anchor of document.querySelectorAll("nav a")) {
+
+for (const anchor of document.querySelectorAll("nav a:not([href])")) {
 	anchor.onclick = () => {
 		for (const element of document.querySelectorAll("home, blog")) {
-			element.hidden = element.localName !== anchor.textContent;
+			element.hidden = element.localName !== anchor.textContent.toLowerCase();
 		}
-		blog.replaceChildren(postList);
+		blog.replaceChildren(posts);
 	};
 }
 
@@ -57,15 +69,12 @@ for (const anchor of document.querySelectorAll("blog a")) {
 			.replace(/[-\s]+/g, "-")
 			.replace(/^[-_]+|[-_]+$/g, "");
 		const response = await fetch(`posts/${slug}.md`);
-		if (!response.ok) {
-			throw new Error(`Failed to fetch ${response.url}: ${response.status}`);
-		}
 		const markdown = await response.text();
 		const postMarkdown = markdown.replace(/^---\n.*?\n---\n/s, "");
 		await MathJax.startup.promise;
 		MathJax.typesetClear([article]);
 		article.innerHTML = marked.parse(postMarkdown);
-		blog.replaceChildren(article);
 		await MathJax.typesetPromise([article]);
+		blog.replaceChildren(article);
 	};
 }
