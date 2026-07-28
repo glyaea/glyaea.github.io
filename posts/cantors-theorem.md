@@ -1,5 +1,6 @@
 ---
 date: 2026-05-23
+layout: post
 name: Cantor's theorem
 ---
 

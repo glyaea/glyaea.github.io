@@ -1,5 +1,6 @@
 ---
 date: 2026-04-22
+layout: post
 name: A ploughing puzzle
 ---
 

@@ -1,5 +1,6 @@
 ---
 date: 2026-07-15
+layout: post
 name: An upper bound on human memory
 ---
 

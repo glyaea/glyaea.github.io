@@ -1,5 +1,6 @@
 ---
 date: 2026-07-17
+layout: post
 name: Well-total-domination of K3-free, induced-P5-free graphs
 ---
 
