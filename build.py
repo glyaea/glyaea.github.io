@@ -25,6 +25,7 @@ if __name__ == "__main__":
 		if slug_path.exists() and not slug_path.samefile(post_path):
 			raise FileExistsError()
 		post_path.rename(slug_path)
+		post["href"] = slug_path.with_suffix(".html").as_posix()
 		posts.append(post)
 	posts.sort(key=lambda post: post["name"])
 	posts.sort(key=lambda post: post["date"], reverse=True)
@@ -36,7 +37,8 @@ if __name__ == "__main__":
 	list_indent = index_source[index_source.rfind("\n", 0, list_end) + 1:list_end]
 	post_list = "\n".join(
 		f"{item_indent}<dt>{post['date']}</dt>\n"
-		f"{item_indent}<dd><a>{html.escape(post['name'], quote=False)}</a></dd>"
+		f"{item_indent}<dd><a href=\"{post['href']}\">"
+		f"{html.escape(post['name'], quote=False)}</a></dd>"
 		for post in posts
 	)
 	list_source = f"\n{post_list}\n{list_indent}"
