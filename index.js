@@ -57,9 +57,6 @@ marked.use({
 
 for (const anchor of document.querySelectorAll("nav a:not([href])")) {
 	anchor.onclick = () => {
-		for (const element of document.querySelectorAll("home, blog")) {
-			element.hidden = element.localName !== anchor.textContent.toLowerCase();
-		}
 		blog.replaceChildren(posts);
 	};
 }

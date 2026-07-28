@@ -3,42 +3,41 @@
 a,
 a:hover,
 a:visited {
-	color: blue;
+	color: inherit;
 	cursor: pointer;
-	text-decoration: none;
-}
-
-a:hover {
 	text-decoration: underline;
+	text-decoration-color: silver;
+	text-underline-offset: 2px;
 }
 
 blockquote {
-	border-left: 1px solid black;
-	padding-left: 1rem;
+	border-left: 0.5px solid silver;
+	padding: 0.5rem 1rem;
 }
 
+/* inline and block code */
 code:not(pre code),
 pre:has(code) {
 	background: whitesmoke;
 	border: 0.5px solid silver;
+	border-radius: 0.25rem;
 	font-family: "SF Mono" !important;
 	hyphens: none;
 }
 
+/* inline code */
 code:not(pre code) {
-	border-radius: 0.25rem;
 	padding: 0 0.25rem;
 	white-space: nowrap;
 }
 
+/* block code */
 pre:has(code) {
-	border-radius: 0.5rem;
 	padding: 1rem;
 }
 
 hr {
 	border: 0;
-	border-top: 0.5px solid silver;
 }
 
 li + li,

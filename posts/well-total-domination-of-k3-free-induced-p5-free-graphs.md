@@ -3,8 +3,8 @@ date: 2026-07-17
 name: Well-total-domination of K3-free, induced-P5-free graphs
 ---
 
-With the help of a clanker, I found a [Lean proof](https://github.com/glyaea/wow-ii-314/blob/7b35f1252e4aaae3c787faf8091f9c7cd4edc41f/solution.lean) of the [DeepMind formalisation](https://google-deepmind.github.io/formal-conjectures/theorem/?name=WrittenOnTheWallII.GraphConjecture314.conjecture314) of Conjecture 314 from [Written on the Wall II](http://cms.dt.uh.edu/faculty/delavinae/research/wowII).
-Here, I prove a generalisation of the conjecture.
+Here, I prove a generalisation of Conjecture 314 from [Written on the Wall II](http://cms.dt.uh.edu/faculty/delavinae/research/wowII).
+With the help of a clanker, I found a [Lean proof](https://github.com/glyaea/wow-ii-314/blob/7b35f1252e4aaae3c787faf8091f9c7cd4edc41f/solution.lean) of the [DeepMind formalisation](https://google-deepmind.github.io/formal-conjectures/theorem/?name=WrittenOnTheWallII.GraphConjecture314.conjecture314) of the original conjecture.
 
 ---
 

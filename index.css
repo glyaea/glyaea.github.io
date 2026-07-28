@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700");
 @import url("core.css");
 
 * {
@@ -10,11 +11,11 @@
 body {
 	display: flex;
 	flex-direction: column;
-	font-family: "Verdana";
+	font-family: "Libre Baskerville";
 	font-size: 16px;
 	gap: 2rem;
 	margin: 2rem auto;
-	width: min(calc(100vw - 4rem), 720px);
+	width: min(calc(100vw - 4rem), 640px);
 }
 
 nav {
@@ -23,13 +24,13 @@ nav {
 	gap: 1rem;
 }
 
-blog dl {
+dl {
 	display: grid;
 	gap: 0.5rem 1rem;
 	grid-template-columns: max-content auto;
 }
 
-blog article {
+article {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
