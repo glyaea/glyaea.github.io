@@ -1,7 +1,7 @@
 ---
 date: 2026-07-17
 layout: post
-name: Well-total-domination of K3-free, induced-P5-free graphs
+name: Well-total domination of K3-free, induced-P5-free graphs
 ---
 
 Here, I prove a generalisation of Conjecture 314 from [Written on the Wall II](http://cms.dt.uh.edu/faculty/delavinae/research/wowII).

@@ -1,39 +1,39 @@
 @import url("https://fonts.cdnfonts.com/css/sf-mono");
 
+@font-face {
+	font-family: "VCTR Mono";
+	src: url("fonts/vctr-mono-regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "VCTR Mono";
+	font-style: italic;
+	src: url("fonts/vctr-mono-italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "VCTR Mono";
+	font-weight: 700;
+	src: url("fonts/vctr-mono-bold.woff2") format("woff2");
+}
+
 a,
-a:hover,
 a:visited {
 	color: inherit;
 	cursor: pointer;
 	text-decoration: underline;
 	text-decoration-color: silver;
-	text-underline-offset: 2px;
+	text-decoration-thickness: 0.5px;
+	text-underline-offset: 1.5px;
+}
+
+a:hover {
+	text-decoration-color: black;
 }
 
 blockquote {
 	border-left: 0.5px solid silver;
 	padding: 0.5rem 1rem;
-}
-
-/* inline and block code */
-code:not(pre code),
-pre:has(code) {
-	background: whitesmoke;
-	border: 0.5px solid silver;
-	border-radius: 0.25rem;
-	font-family: "SF Mono" !important;
-	hyphens: none;
-}
-
-/* inline code */
-code:not(pre code) {
-	padding: 0 0.25rem;
-	white-space: nowrap;
-}
-
-/* block code */
-pre:has(code) {
-	padding: 1rem;
 }
 
 hr {
@@ -63,4 +63,25 @@ ol,
 ul {
 	list-style-position: outside;
 	margin-left: 1rem;
+}
+
+/* BLOCK AND INLINE CODE */
+code:not(pre code),
+pre:has(code) {
+	background: whitesmoke;
+	border: 0.5px solid silver;
+	border-radius: 0.25rem;
+	font-family: "SF Mono" !important;
+	hyphens: none;
+}
+
+/* BLOCK CODE */
+pre:has(code) {
+	padding: 1rem;
+}
+
+/* INLINE CODE */
+code:not(pre code) {
+	padding: 0 0.25rem;
+	white-space: nowrap;
 }
