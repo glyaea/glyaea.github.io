@@ -1,4 +1,14 @@
-window.MathJax = {tex: {inlineMath: {"[+]": [["$", "$"]]}}};
+window.MathJax = {
+	tex: {
+		inlineMath: {"[+]": [["$", "$"]]},
+		preFilters: [({math}) => {
+			math.math = math.math.replace(
+				/\{\{[^{}]*\}(?:,\{[^{}]*\})+\}/g,
+				set => set.replaceAll("{", "\\{").replaceAll("}", "\\}")
+			);
+		}]
+	}
+};
 
 await new Promise((resolve, reject) =>
 	document.head.append(Object.assign(document.createElement("script"), {
