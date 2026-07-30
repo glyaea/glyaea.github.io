@@ -1,4 +1,5 @@
 @import url("core.css");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700');
 
 * {
 	box-sizing: border-box;
@@ -14,9 +15,8 @@ body {
 	font-family: "VCTR Mono";
 	font-size: 16px;
 	gap: 2rem;
-	letter-spacing: 0.5px;
 	margin: 2rem auto;
-	width: min(calc(100vw - 4rem), 800px);
+	width: min(calc(100vw - 4rem), 720px);
 }
 
 nav {

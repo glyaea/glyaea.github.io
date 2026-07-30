@@ -62,13 +62,12 @@ mjx-container:not([display]) {
 ol,
 ul {
 	list-style-position: outside;
-	margin-left: 1rem;
+	margin-left: 2rem;
 }
 
 /* BLOCK AND INLINE CODE */
 code:not(pre code),
 pre:has(code) {
-	background: whitesmoke;
 	border: 0.5px solid silver;
 	border-radius: 0.25rem;
 	font-family: "SF Mono" !important;
