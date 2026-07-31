@@ -13,7 +13,7 @@ blogLink.addEventListener("click", event => {
 	postList.hidden = false;
 });
 
-for (const postLink of postList.querySelectorAll("a")) {
+for (const postLink of postList.querySelectorAll('a[href^="posts/"]')) {
 	postLink.addEventListener("click", async event => {
 		event.preventDefault();
 		const response = await fetch(postLink.href);
