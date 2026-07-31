@@ -1,4 +1,4 @@
-import markedKatex from "https://cdn.jsdelivr.net/npm/marked-katex-extension@5.1.10/+esm";
+import markedKatex from "https://esm.sh/marked-katex-extension@5.1.10";
 import {marked} from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
 const article = document.querySelector("article");
