@@ -11,19 +11,19 @@ $$
 	\mathbf{L}
 	=
 	\begin{bmatrix}
-	\square & \square & \square & S
-	\\
-	\square & \square & \square & \square
-	\\
-	\square & \square & \square & E
+		\square & \square & \square & S \\
+		\square & \square & \square & \square \\
+		\square & \square & \square & E
 	\end{bmatrix}
 $$
 
-> from $S$ to $E$ using only up, down, left, and right moves without backtracking?
+> from $S$ to $E$ using only up, down, left, and right moves without
+> backtracking?
 
 Here is a solution.
 
-1. Suppose you equip a device $D$ that, at any position $l_{i,j}$, says if $i+j$ is odd or even.
+1. Suppose you equip a device $D$ that, at any position $l_{i,j}$, says if
+$i+j$ is odd or even.
 2. Clearly, any move from any position will flip what $D$ says.
 3. We know $D$ says "odd" at $S=l_{1,4}$, because $1+4=7$ is odd.
 4. To complete the plough, we must make $11=3(4)-1$ moves, and thus, flips.
