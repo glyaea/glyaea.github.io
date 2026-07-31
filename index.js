@@ -1,22 +1,30 @@
-window.MathJax = {
-	tex: {
-		inlineMath: {"[+]": [["$", "$"]]},
-		preFilters: [({math}) => {
-			math.math = math.math.replace(
-				/\{\{[^{}]*\}(?:,\{[^{}]*\})+\}/g,
-				set => set.replaceAll("{", "\\{").replaceAll("}", "\\}")
-			);
-		}]
-	}
-};
+import markedKatex from "https://cdn.jsdelivr.net/npm/marked-katex-extension@5.1.10/+esm";
+import {marked} from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
-await new Promise((resolve, reject) =>
-	document.head.append(Object.assign(document.createElement("script"), {
-		onerror: reject,
-		onload: resolve,
-		src: "https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-mml-chtml.js"
-	}))
-);
+const article = document.querySelector("article");
+const blogLink = document.querySelector('nav a[href="#"]');
+const postList = document.querySelector("dl");
+
+marked.use(markedKatex({nonStandard: true}));
+
+blogLink.addEventListener("click", event => {
+	event.preventDefault();
+	article.hidden = true;
+	postList.hidden = false;
+});
+
+for (const postLink of postList.querySelectorAll("a")) {
+	postLink.addEventListener("click", async event => {
+		event.preventDefault();
+		const response = await fetch(postLink.href);
+		if (!response.ok) throw new Error();
+		const postSource = await response.text();
+		const postBody = postSource.replace(/^---\r?\n.*?\r?\n---\r?\n/s, "").trim();
+		article.innerHTML = marked.parse(postBody);
+		postList.hidden = true;
+		article.hidden = false;
+	});
+}
 
 fetch("https://gregorylimeurhen.goatcounter.com/counter/TOTAL.json")
 	.then(response => response.json())

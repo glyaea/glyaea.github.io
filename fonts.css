@@ -1,0 +1,19 @@
+@import url("https://fonts.cdnfonts.com/css/sf-mono");
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+
+@font-face {
+	font-family: "VCTR Mono";
+	src: url("fonts/vctr-mono-regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "VCTR Mono";
+	font-style: italic;
+	src: url("fonts/vctr-mono-italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "VCTR Mono";
+	font-weight: 700;
+	src: url("fonts/vctr-mono-bold.woff2") format("woff2");
+}

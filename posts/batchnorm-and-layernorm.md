@@ -1,6 +1,5 @@
 ---
 date: 2026-05-04
-layout: post
 name: BatchNorm and LayerNorm
 ---
 

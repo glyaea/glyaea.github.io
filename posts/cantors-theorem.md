@@ -1,7 +1,6 @@
 ---
 date: 2026-05-23
-layout: post
-name: Cantor's theorem
+name: Cantor's Theorem
 ---
 
 There exists no surjective function from a set to its power set.

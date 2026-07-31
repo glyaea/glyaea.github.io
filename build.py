@@ -25,7 +25,7 @@ if __name__ == "__main__":
 		if slug_path.exists() and not slug_path.samefile(post_path):
 			raise FileExistsError()
 		post_path.rename(slug_path)
-		post["href"] = slug_path.with_suffix(".html").as_posix()
+		post["href"] = slug_path.as_posix()
 		posts.append(post)
 	posts.sort(key=lambda post: post["name"])
 	posts.sort(key=lambda post: post["date"], reverse=True)

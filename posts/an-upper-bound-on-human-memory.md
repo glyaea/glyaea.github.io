@@ -1,7 +1,6 @@
 ---
 date: 2026-07-15
-layout: post
-name: An upper bound on human memory
+name: An Upper Bound on Human Memory
 ---
 
 A loose upper bound on human memory can be established from a simple counting argument.

@@ -1,7 +1,6 @@
 ---
 date: 2026-04-22
-layout: post
-name: A ploughing puzzle
+name: A Ploughing Puzzle
 ---
 
 I recently came across the following puzzle on social media.
