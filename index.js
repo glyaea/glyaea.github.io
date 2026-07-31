@@ -7,8 +7,19 @@ const postList = document.querySelector("dl");
 
 marked.use(markedKatex({nonStandard: true}));
 
+async function showPost(postHref) {
+	const response = await fetch(postHref);
+	if (!response.ok) throw new Error();
+	const postSource = await response.text();
+	const postBody = postSource.replace(/^---\r?\n.*?\r?\n---\r?\n/s, "").trim();
+	article.innerHTML = marked.parse(postBody);
+	postList.hidden = true;
+	article.hidden = false;
+}
+
 blogLink.addEventListener("click", event => {
 	event.preventDefault();
+	if (!article.hidden) history.pushState({}, "");
 	article.hidden = true;
 	postList.hidden = false;
 });
@@ -16,15 +27,19 @@ blogLink.addEventListener("click", event => {
 for (const postLink of postList.querySelectorAll('a[href^="posts/"]')) {
 	postLink.addEventListener("click", async event => {
 		event.preventDefault();
-		const response = await fetch(postLink.href);
-		if (!response.ok) throw new Error();
-		const postSource = await response.text();
-		const postBody = postSource.replace(/^---\r?\n.*?\r?\n---\r?\n/s, "").trim();
-		article.innerHTML = marked.parse(postBody);
-		postList.hidden = true;
-		article.hidden = false;
+		await showPost(postLink.href);
+		history.pushState({post: postLink.href}, "");
 	});
 }
+
+window.addEventListener("popstate", async event => {
+	if (event.state?.post) {
+		await showPost(event.state.post);
+		return;
+	}
+	article.hidden = true;
+	postList.hidden = false;
+});
 
 fetch("https://gregorylimeurhen.goatcounter.com/counter/TOTAL.json")
 	.then(response => response.json())
