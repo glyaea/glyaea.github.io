@@ -4,8 +4,8 @@ name: Cantor's Theorem
 ---
 
 There exists no surjective function from a set to its power set. To see why,
-let $X$ be a set and assume there exists such a $f:X\to\mathcal{P}(X)$.
-Since $f$ is surjective, we have:
+let $X$ be a set and assume there exists such a $f:X\to\mathcal{P}(X)$. Since
+$f$ is surjective, we have:
 
 $$
 	\forall y\in\mathcal{P}(X),\,

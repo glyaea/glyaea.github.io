@@ -2,44 +2,15 @@ import markedKatex from "https://esm.sh/marked-katex-extension@5.1.10";
 import {marked} from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
 const article = document.querySelector("article");
-const blogLink = document.querySelector('nav a[href="#"]');
-const postList = document.querySelector("dl");
 
 marked.use(markedKatex({nonStandard: true}));
 
-async function showPost(postHref) {
-	const response = await fetch(postHref);
-	if (!response.ok) throw new Error();
-	const postSource = await response.text();
-	const postBody = postSource.replace(/^---\r?\n.*?\r?\n---\r?\n/s, "").trim();
-	article.innerHTML = marked.parse(postBody);
-	postList.hidden = true;
+if (article) {
+	const indentation = article.textContent.match(/^\n([\t ]*)/)[1];
+	const postSource = article.textContent.trim().replaceAll(`\n${indentation}`, "\n");
+	article.innerHTML = marked.parse(postSource);
 	article.hidden = false;
 }
-
-blogLink.addEventListener("click", event => {
-	event.preventDefault();
-	if (!article.hidden) history.pushState({}, "");
-	article.hidden = true;
-	postList.hidden = false;
-});
-
-for (const postLink of postList.querySelectorAll('a[href^="posts/"]')) {
-	postLink.addEventListener("click", async event => {
-		event.preventDefault();
-		await showPost(postLink.href);
-		history.pushState({post: postLink.href}, "");
-	});
-}
-
-window.addEventListener("popstate", async event => {
-	if (event.state?.post) {
-		await showPost(event.state.post);
-		return;
-	}
-	article.hidden = true;
-	postList.hidden = false;
-});
 
 fetch("https://gregorylimeurhen.goatcounter.com/counter/TOTAL.json")
 	.then(response => response.json())
