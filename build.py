@@ -37,7 +37,7 @@ if __name__ == "__main__":
 	item_indent = item_line[:len(item_line) - len(item_line.lstrip())]
 	list_indent = index_source[index_source.rfind("\n", 0, list_end) + 1:list_end]
 	post_list = "\n".join(
-		f"{item_indent}<dt>{post['date']}</dt>\n"
+		f"{item_indent}<dt>{post['date'][2:7]}</dt>\n"
 		f"{item_indent}<dd><a href=\"{post['href']}\"{post['target']}>"
 		f"{html.escape(post['name'], quote=False)}</a></dd>"
 		for post in posts
