@@ -16,3 +16,20 @@
 	font-weight: 700;
 	src: url("fonts/vctr-mono-bold.woff2") format("woff2");
 }
+
+@font-face {
+	font-family: "Iowan Old Style";
+	src: url("fonts/iowan-old-style-regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Iowan Old Style";
+	font-style: italic;
+	src: url("fonts/iowan-old-style-italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Iowan Old Style";
+	font-weight: 700;
+	src: url("fonts/iowan-old-style-bold.woff2") format("woff2");
+}

@@ -15,10 +15,10 @@ body {
 	background: floralwhite;
 	display: flex;
 	flex-direction: column;
-	font-family: "VCTR Mono";
+	font-family: "Iowan Old Style";
 	gap: 2rem;
 	margin: 2rem auto;
-	width: min(calc(100vw - 4rem), 800px);
+	width: min(calc(100vw - 4rem), 720px);
 }
 
 body:hover {
@@ -29,14 +29,12 @@ nav {
 	display: flex;
 	flex-direction: row;
 	gap: 2rem;
-	text-transform: lowercase;
 }
 
 dl {
 	display: grid;
-	gap: 1rem 2rem;
+	gap: 0.5rem 2rem;
 	grid-template-columns: max-content auto;
-	text-transform: lowercase;
 }
 
 article {

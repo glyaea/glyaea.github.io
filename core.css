@@ -4,8 +4,10 @@
 a,
 a:hover,
 a:visited {
-	color: rgb(32, 94, 166);
-	text-decoration: none;
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-thickness: 0.5px;
+	text-underline-offset: 1.5px;
 }
 
 blockquote {
