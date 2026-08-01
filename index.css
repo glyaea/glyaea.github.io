@@ -6,6 +6,10 @@
 	padding: 0;
 }
 
+::selection {
+	background: rgba(0, 0, 0, 0.1);
+}
+
 [hidden] {
 	display: none;
 }
@@ -15,7 +19,7 @@ html {
 }
 
 body {
-	background: floralwhite;
+	background: #FFFFF8;
 	display: flex;
 	flex-direction: column;
 	font-family: "Iowan Old Style";
@@ -32,11 +36,18 @@ nav {
 	display: flex;
 	flex-direction: row;
 	gap: 2rem;
+	justify-content: center;
+}
+
+nav img {
+	height: 32px;
+	width: 32px;
+	vertical-align: middle;
 }
 
 dl {
 	display: grid;
-	gap: 0.5rem 2rem;
+	gap: 1rem 2rem;
 	grid-template-columns: max-content auto;
 }
 

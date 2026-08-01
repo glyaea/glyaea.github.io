@@ -8,17 +8,16 @@ let $X$ be a set and assume there exists such a $f:X\to\mathcal{P}(X)$.
 Since $f$ is surjective, we have:
 
 $$
-	\forall y\in\mathcal{P}(X):(
-		\exists x\in X:(
+	\forall y\in\mathcal{P}(X),\,
+		\exists x\in X\,(
 			f(x)=y
 		)
-	)
 $$
 
 Let $D=\{x\in X\mid x\notin f(x)\}$. Since $D\in\mathcal{P}(X)$, we have:
 
 $$
-	\exists x\in X:(
+	\exists x\in X\,(
 		f(x)=D
 	)
 $$
