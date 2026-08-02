@@ -3,7 +3,7 @@ on:
     branches: ["main"]
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
   pages: write
 
@@ -13,8 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/configure-pages@v5
-      - run: python3 build.py
+      - run: |
+          python build.py
+          git add "posts/*.md"
+          if ! git diff --staged --quiet
+          then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit --allow-empty-message --no-edit
+            git push
+          fi
       - uses: actions/upload-pages-artifact@v4
         with:
           path: .

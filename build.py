@@ -42,29 +42,26 @@ def read_post(post_path):
 
 if __name__ == "__main__":
 	root_path = pathlib.Path(__file__).parent
-	html_path = root_path / "posts" / "html"
 	index_path = root_path / "index.html"
-	md_path = root_path / "posts"
-	html_path.mkdir(exist_ok=True)
+	posts_path = root_path / "posts"
 	index_source = index_path.read_text(encoding="utf-8")
 	posts = []
-	for post_path in md_path.glob("*.md"):
+	for post_path in posts_path.glob("*.md"):
 		post = read_post(post_path)
 		slug_path = post_path.with_name(f"{create_slug(post['name'])}.md")
 		if slug_path.exists() and not slug_path.samefile(post_path):
 			raise FileExistsError()
 		post_path.rename(slug_path)
-		post["href"] = post.get("link", f"posts/html/{slug_path.stem}.html")
+		post["href"] = post.get("link", f"posts/{slug_path.stem}.html")
 		post["target"] = " target=\"_blank\"" if "link" in post else ""
 		posts.append(post)
 	posts.sort(key=lambda post: post["name"])
 	posts.sort(key=lambda post: post["date"], reverse=True)
-	list_start = index_source.index("<dl>") + len("<dl>")
+	list_start = index_source.index("<dl>")
+	list_indent = index_source[index_source.rfind("\n", 0, list_start) + 1:list_start]
+	item_indent = f"{list_indent}\t"
+	list_start += len("<dl>")
 	list_end = index_source.index("</dl>", list_start)
-	list_lines = index_source[list_start:list_end].splitlines()
-	item_line = next(line for line in list_lines if line.strip())
-	item_indent = item_line[:len(item_line) - len(item_line.lstrip())]
-	list_indent = index_source[index_source.rfind("\n", 0, list_end) + 1:list_end]
 	post_list = "\n".join(
 		f"{item_indent}<dt>{post['date'][2:7]}</dt>\n"
 		f"{item_indent}<dd><a href=\"{post['href']}\"{post['target']}>"
@@ -77,5 +74,5 @@ if __name__ == "__main__":
 	for post in posts:
 		if "link" in post:
 			continue
-		page_path = html_path / pathlib.Path(post["href"]).name
+		page_path = posts_path / pathlib.Path(post["href"]).name
 		page_path.write_text(create_page(built_source, post), encoding="utf-8")
