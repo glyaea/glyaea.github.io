@@ -52,7 +52,7 @@ if __name__ == "__main__":
 		if slug_path.exists() and not slug_path.samefile(post_path):
 			raise FileExistsError()
 		post_path.rename(slug_path)
-		post["href"] = post.get("link", f"posts/{slug_path.stem}.html")
+		post["href"] = post.get("link", f"posts/{slug_path.stem}")
 		post["target"] = " target=\"_blank\"" if "link" in post else ""
 		posts.append(post)
 	posts.sort(key=lambda post: post["name"])
@@ -74,5 +74,5 @@ if __name__ == "__main__":
 	for post in posts:
 		if "link" in post:
 			continue
-		page_path = posts_path / pathlib.Path(post["href"]).name
+		page_path = posts_path / f"{pathlib.Path(post['href']).name}.html"
 		page_path.write_text(create_page(built_source, post), encoding="utf-8")
