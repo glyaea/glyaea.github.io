@@ -25,7 +25,11 @@ img {
 
 ol,
 ul {
-	list-style-position: inside;
+	margin-left: 2rem;
+}
+
+li {
+	padding-left: 0.25rem;
 }
 
 li::marker {

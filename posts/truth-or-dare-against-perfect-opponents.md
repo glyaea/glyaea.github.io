@@ -3,13 +3,13 @@ date: 2026-08-04
 name: Truth or Dare Against Perfect Opponents
 ---
 
-In the game of Truth or Dare, players are given the choice between two options:
+In the game of Truth or Dare, players are made to choose between two options:
 
 1. **Truth.** Answering a particular question.
 2. **Dare.** Performing a particular action.
 
-Against a perfect opponent, what should one choose to minimise harm? Here is a
-minimax argument for Truth.
+Against a perfect opponent, which option should one choose to minimise harm?
+Here is a minimax argument for Truth.
 
 1. A Dare is a request.
 2. A Truth is a request for information.
