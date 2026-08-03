@@ -8,8 +8,8 @@ In the game of Truth or Dare, players are given the choice between two options:
 1. **Truth.** Answering a particular question.
 2. **Dare.** Performing a particular action.
 
-Against a perfect opponent, what should one choose to minimise harm? Here is an
-argument for Truth.
+Against a perfect opponent, what should one choose to minimise harm? Here is a
+minimax argument for Truth.
 
 1. A Dare is a request.
 2. A Truth is a request for information.
