@@ -22,7 +22,7 @@ $$
 	T\subset D
 $$
 
-Thus, choosing Truth strictly reduces the space of issuable requests. Some
-requests are harmful, and perfect opposition always issues the most harmful
-request. Clearly, the most harmful request $T$ is at most as harmful as the most
-harmful request in $D$. Thus, choosing Truth minimises harm.
+Thus, choosing Truth strictly reduces the space of issuable requests. A request
+can be harmful, and perfect opposition always issues a most harmful request.
+Clearly, a most harmful request $T$ is at most as harmful as a most harmful
+request in $D$. Thus, choosing Truth minimises harm.
