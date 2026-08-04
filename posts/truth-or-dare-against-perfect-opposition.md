@@ -17,9 +17,11 @@ A Dare is a request, and a Truth is a request for information. All requests for
 information are requests, but not all requests are requests for information.
 Thus, all Truths are Dares, but not all Dares are Truths. Let $T$ be the space
 of Truths, and $D$ be the space of Dares. Then, we have:
+
 $$
 	T\subset D
 $$
+
 Thus, choosing Truth strictly reduces the space of issuable requests. Some
 requests are harmful, and perfect opposition always issues the most harmful
 request. Clearly, the most harmful request $T$ is at most as harmful as the most
