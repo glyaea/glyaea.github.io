@@ -51,33 +51,33 @@ th {
 	padding: 0.25rem 0.5rem;
 }
 
-/* BLOCK AND INLINE CODE */
+/* CODE */
 code:not(pre code),
 pre:has(code) {
 	font-family: "SF Mono";
 	hyphens: none;
 }
 
-/* BLOCK CODE */
+/* > BLOCK */
 pre:has(code) {
 	padding-left: 1rem;
 	text-wrap-mode: wrap;
 }
 
-/* INLINE CODE */
+/* > INLINE */
 code:not(pre code) {}
 
-/* BLOCK AND INLINE MATH */
+/* MATH */
 .katex-html {
 	font-size: 1rem;
 }
 
-/* BLOCK MATH */
+/* > BLOCK */
 .katex-display {
 	margin: 0;
 }
 
-/* INLINE MATH */
+/* > INLINE */
 p .katex {
 	line-height: inherit;
 	white-space: nowrap;
