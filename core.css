@@ -11,12 +11,12 @@ a:visited {
 }
 
 blockquote {
-	border-left: 1px solid black;
+	border-left: 0.5px solid black;
 	padding-left: 1rem;
 }
 
 hr {
-	border: 0;
+	border: none;
 }
 
 img {
@@ -36,18 +36,18 @@ li::marker {
 	font-weight: bold;
 }
 
-li + li {
-	margin-top: 0.5rem;
-}
-
 table {
+	border: none;
 	border-collapse: collapse;
 	text-align: left;
 }
 
+th {
+	border-bottom: 0.5px solid black;
+}
+
 td,
 th {
-	border: 1px solid black;
 	padding: 0.25rem 0.5rem;
 }
 
@@ -79,6 +79,7 @@ code:not(pre code) {}
 
 /* inline math */
 p .katex {
+	font-size: 1rem;
 	line-height: inherit;
 	white-space: nowrap;
 }

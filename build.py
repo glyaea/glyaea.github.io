@@ -63,7 +63,7 @@ if __name__ == "__main__":
 	list_start += len("<dl>")
 	list_end = index_source.index("</dl>", list_start)
 	post_list = "\n".join(
-		f"{item_indent}<dt>{post['date'][2:7]}</dt>\n"
+		f"{item_indent}<dt>{post['date']}</dt>\n"
 		f"{item_indent}<dd><a href=\"{post['href']}\"{post['target']}>"
 		f"{html.escape(post['name'], quote=False)}</a></dd>"
 		for post in posts

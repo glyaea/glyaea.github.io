@@ -13,10 +13,9 @@ html {
 }
 
 body {
-	background: floralwhite;
 	display: flex;
 	flex-direction: column;
-	font-family: "Overused Grotesk";
+	font-family: "Iowan Old Style", ui-serif;
 	gap: 2rem;
 	margin: 2rem auto;
 	width: min(calc(100vw - 4rem), 720px);

@@ -5,13 +5,8 @@ name: An Upper Bound on Human Memory
 
 A loose upper bound on human memory can be established from a simple counting
 argument. Suppose a brain of mass $m$ fits in a sphere of radius $r$. Then, the
-mass-energy of the brain is at most:
-
-$$
-	E=mc^{2}
-$$
-
-Applying Bekenstein's bound, the maximum information in that sphere is:
+mass-energy of the brain is at most $E=mc^{2}$. Applying Bekenstein's bound, the
+maximum information in that sphere is:
 
 $$
 	I\leq\frac{2\pi Er}{\hbar c\ln 2}
