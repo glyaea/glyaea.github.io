@@ -16,7 +16,7 @@ body {
 	background: floralwhite;
 	display: flex;
 	flex-direction: column;
-	font-family: "Neue Haas Grotesk";
+	font-family: "Overused Grotesk";
 	gap: 2rem;
 	margin: 2rem auto;
 	width: min(calc(100vw - 4rem), 720px);
