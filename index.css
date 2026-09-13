@@ -1,13 +1,11 @@
 @import url("core.css");
 
 * {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-}
-
-::selection {
-	background: rgba(0, 0, 0, 0.1);
 }
 
 html {
@@ -15,12 +13,13 @@ html {
 }
 
 body {
+	background: floralwhite;
 	display: flex;
 	flex-direction: column;
-	font-family: "Iowan Old Style";
+	font-family: "Neue Haas Grotesk";
 	gap: 2rem;
 	margin: 2rem auto;
-	width: min(calc(100vw - 4rem), 640px);
+	width: min(calc(100vw - 4rem), 720px);
 }
 
 body:hover {
@@ -35,14 +34,14 @@ nav {
 }
 
 nav img {
-	height: 32px;
-	width: 32px;
+	height: 2rem;
+	width: 2rem;
 	vertical-align: middle;
 }
 
 dl {
 	display: grid;
-	gap: 0.5rem 1rem;
+	gap: 1rem 2rem;
 	grid-template-columns: max-content auto;
 }
 
