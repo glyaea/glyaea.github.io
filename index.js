@@ -12,6 +12,17 @@ if (article) {
 	article.hidden = false;
 }
 
+const playlist = document.querySelector("table[playlist]");
+
+if (playlist) {
+	playlist.addEventListener("click", event => {
+		const row = event.target.closest("tr[url]");
+		if (row) {
+				window.open(row.getAttribute("url"), "_blank", "noopener,noreferrer");
+		}
+	});
+}
+
 fetch("https://gregorylimeurhen.goatcounter.com/counter/TOTAL.json")
 	.then(response => response.json())
 	.then(response => console.log(response.count));

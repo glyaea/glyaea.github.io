@@ -1,5 +1,5 @@
-@import url("fonts.css");
 @import url("https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css");
+@import url("fonts.css");
 
 a,
 a:hover,
@@ -28,27 +28,23 @@ ul {
 	margin-left: 2rem;
 }
 
-li {
-	padding-left: 0.25rem;
-}
-
-li::marker {
-	font-weight: bold;
-}
-
 table {
 	border: none;
 	border-collapse: collapse;
 	text-align: left;
 }
 
+tr:not(:first-child) {
+	border-bottom: 0.5px solid silver;
+}
+
 th {
 	border-bottom: 0.5px solid black;
 }
 
-td,
-th {
-	padding: 0.25rem 0.5rem;
+th,
+td {
+	padding: 0.5rem 1rem;
 }
 
 /* code */
@@ -68,13 +64,13 @@ pre:has(code) {
 code:not(pre code) {}
 
 /* math */
-.katex-html {
-	font-size: 1rem;
-}
-
 /* blocky math */
 .katex-display {
 	margin: 0;
+}
+
+.katex-display .katex-html {
+	font-size: 1rem;
 }
 
 /* inline math */

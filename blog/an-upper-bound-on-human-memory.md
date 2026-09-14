@@ -3,6 +3,8 @@ date: 2026-07-15
 name: An Upper Bound on Human Memory
 ---
 
+# An Upper Bound on Human Memory
+
 A loose upper bound on human memory can be established from a simple counting
 argument. Suppose a brain of mass $m$ fits in a sphere of radius $r$. Then, the
 mass-energy of the brain is at most $E=mc^{2}$. Applying Bekenstein's bound, the

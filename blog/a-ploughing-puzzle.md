@@ -3,6 +3,8 @@ date: 2026-04-22
 name: A Ploughing Puzzle
 ---
 
+# A Ploughing Puzzle
+
 I recently came across the following puzzle on social media.
 
 > Is it possible to plough a plot of land

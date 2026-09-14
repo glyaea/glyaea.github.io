@@ -3,6 +3,8 @@ date: 2026-08-04
 name: Truth or Dare Against God
 ---
 
+# Truth or Dare Against God
+
 In the game of Truth or Dare, players are made to choose between two options:
 
 1. **Truth.** Answering a particular question.

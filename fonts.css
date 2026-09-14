@@ -1,23 +1,86 @@
 @import url("https://fonts.cdnfonts.com/css/sf-mono");
-@import url("https://cdn.jsdelivr.net/npm/sf-font@1.0.0/stylesheet.min.css");
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
 
 @font-face {
-	font-family: "Neue Haas Grotesk";
-	src: url("fonts/neue-haas-grotesk/regular.woff2") format("woff2");
+	font-family: "Marist";
+	font-style: normal;
+	src: url("fonts/marist/book.otf") format("opentype");
 }
 
 @font-face {
-	font-family: "Neue Haas Grotesk";
+	font-family: "Marist";
 	font-style: italic;
-	src: url("fonts/neue-haas-grotesk/italic.woff2") format("woff2");
+	src: url("fonts/marist/book-italic.otf") format("opentype");
 }
 
 @font-face {
-	font-family: "Neue Haas Grotesk";
-	font-weight: 700;
-	src: url("fonts/neue-haas-grotesk/bold.woff2") format("woff2");
+	font-family: "Marist";
+	font-style: normal;
+	font-weight: bold;
+	src: url("fonts/marist/regular.otf") format("opentype");
 }
+
+@font-face {
+	font-family: "Marist";
+	font-style: italic;
+	font-weight: bold;
+	src: url("fonts/marist/regular-italic.otf") format("opentype");
+}
+
+/* @font-face {
+	font-family: "Marist";
+	font-style: normal;
+	font-weight: 500;
+	src: url("fonts/marist/medium.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Marist";
+	font-style: italic;
+	font-weight: 500;
+	src: url("fonts/marist/medium-italic.otf") format("opentype");
+} */
+
+/* @font-face {
+	font-family: "Marist";
+	font-style: normal;
+	font-weight: 600;
+	src: url("fonts/marist/semibold.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Marist";
+	font-style: italic;
+	font-weight: 600;
+	src: url("fonts/marist/semibold-italic.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Marist";
+	font-style: normal;
+	font-weight: 700;
+	src: url("fonts/marist/bold.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Marist";
+	font-style: italic;
+	font-weight: 700;
+	src: url("fonts/marist/bold-italic.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Marist";
+	font-style: normal;
+	font-weight: 900;
+	src: url("fonts/marist/black.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Marist";
+	font-style: italic;
+	font-weight: 900;
+	src: url("fonts/marist/black-italic.otf") format("opentype");
+} */
 
 @font-face {
 	font-family: "Iowan Old Style";
@@ -34,38 +97,4 @@
 	font-family: "Iowan Old Style";
 	font-weight: 700;
 	src: url("fonts/iowan-old-style/bold.woff2") format("woff2");
-}
-
-@font-face {
-	font-family: "Redaction";
-	src: url("fonts/Redaction/regular.woff2") format("woff2");
-}
-
-@font-face {
-	font-family: "Redaction";
-	font-style: italic;
-	src: url("fonts/redaction/italic.woff2") format("woff2");
-}
-
-@font-face {
-	font-family: "Redaction";
-	font-weight: 700;
-	src: url("fonts/redaction/bold.woff2") format("woff2");
-}
-
-@font-face {
-	font-family: "VCTR Mono";
-	src: url("fonts/vctr-mono/regular.woff2") format("woff2");
-}
-
-@font-face {
-	font-family: "VCTR Mono";
-	font-style: italic;
-	src: url("fonts/vctr-mono/italic.woff2") format("woff2");
-}
-
-@font-face {
-	font-family: "VCTR Mono";
-	font-weight: 700;
-	src: url("fonts/vctr-mono/bold.woff2") format("woff2");
 }
