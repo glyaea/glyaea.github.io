@@ -44,11 +44,6 @@ dl {
 	grid-template-columns: max-content auto;
 }
 
-table[playlist] tr:not(:first-child):hover {
-	background: whitesmoke;
-	cursor: alias;
-}
-
 article {
 	display: flex;
 	flex-direction: column;

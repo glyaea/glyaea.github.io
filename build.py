@@ -1,5 +1,4 @@
 import html
-import json
 import pathlib
 import re
 import unicodedata
@@ -49,16 +48,16 @@ def read_post(post_path):
 if __name__ == "__main__":
 	root_path = pathlib.Path(__file__).parent
 	index_path = root_path / "index.html"
-	blog_path = root_path / "blog"
+	posts_path = root_path / "posts"
 	index_source = index_path.read_text(encoding="utf-8")
 	posts = []
-	for post_path in blog_path.glob("*.md"):
+	for post_path in posts_path.glob("*.md"):
 		post = read_post(post_path)
 		slug_path = post_path.with_name(f"{create_slug(post['name'])}.md")
 		if slug_path.exists() and not slug_path.samefile(post_path):
 			raise FileExistsError()
 		post_path.rename(slug_path)
-		post["href"] = post.get("link", f"blog/{slug_path.stem}")
+		post["href"] = post.get("link", f"posts/{slug_path.stem}")
 		post["target"] = " target=\"_blank\"" if "link" in post else ""
 		posts.append(post)
 	posts.sort(key=lambda post: post["name"])
@@ -82,32 +81,9 @@ if __name__ == "__main__":
 	post_list = "\n".join(post_list)
 	list_source = f"\n{post_list}\n{list_indent}"
 	built_source = index_source[:list_start] + list_source + index_source[list_end:]
-	playlist = json.loads((root_path / "opera.json").read_text(encoding="utf-8"))
-	table_start = built_source.index("<table playlist>")
-	table_indent = built_source[built_source.rfind("\n", 0, table_start) + 1:table_start]
-	row_indent = f"{table_indent}\t"
-	table_start += len("<table playlist>")
-	table_end = built_source.index("</table>", table_start)
-	table_rows = [
-		f"{row_indent}<tr>\n"
-		f"{row_indent}\t<th>What</th>\n"
-		f"{row_indent}\t<th>Who</th>\n"
-		f"{row_indent}\t<th>Where</th>\n"
-		f"{row_indent}</tr>"
-	]
-	for opera in playlist:
-		table_rows.append(
-			f"{row_indent}<tr url=\"{html.escape(opera['url'], quote=True)}\">\n"
-			f"{row_indent}\t<td>{html.escape(opera['what'])}</td>\n"
-			f"{row_indent}\t<td>{html.escape(opera['who'])}</td>\n"
-			f"{row_indent}\t<td>{html.escape(opera['where'])}</td>\n"
-			f"{row_indent}</tr>"
-		)
-	table_source = "\n" + "\n".join(table_rows) + f"\n{table_indent}"
-	built_source = built_source[:table_start] + table_source + built_source[table_end:]
 	index_path.write_text(built_source, encoding="utf-8")
 	for post in posts:
 		if "link" in post:
 			continue
-		page_path = blog_path / f"{pathlib.Path(post['href']).name}.html"
+		page_path = posts_path / f"{pathlib.Path(post['href']).name}.html"
 		page_path.write_text(create_page(built_source, post), encoding="utf-8")
