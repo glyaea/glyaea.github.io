@@ -48,34 +48,24 @@ td {
 }
 
 /* code */
-code:not(pre code),
-pre:has(code) {
+code {
 	font-family: "SF Mono";
 	hyphens: none;
 }
 
-/* blocky code */
 pre:has(code) {
 	padding-left: 1rem;
 	text-wrap-mode: wrap;
 }
 
-/* inline code */
-code:not(pre code) {}
-
 /* math */
-/* blocky math */
-.katex-display {
-	margin: 0;
-}
-
-.katex-display .katex-html {
-	font-size: 1rem;
-}
-
-/* inline math */
-p .katex {
+.katex,
+.katex-html {
 	font-size: 1rem;
 	line-height: inherit;
 	white-space: nowrap;
+}
+
+.katex-display {
+	margin: 0;
 }
