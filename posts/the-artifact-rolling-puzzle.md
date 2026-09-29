@@ -5,13 +5,16 @@ name: The Artifact Rolling Puzzle
 
 # The Artifact Rolling Puzzle
 
-Suppose you are at a carnival with games $A_{1},A_{2}$.
-You must play one of them.
-Game $A_{i}$ has $F_{i}\in\{1,2,3,4\}$ and $S_{i}\in\{0,1,2,3,4\}$, and allows
-one to:
+Suppose a carnival has games $A_{1},A_{2}$, and exactly one must be played.
+Game $A_{i}$ has:
 
-1. Roll, exactly four times, a d4 with $F_{i}$ good faces.
-2. Walk away from the carnival with a score of $\max(S,S_{i})+S_{3-i}$, where
-   $S$ is the number of rolls that landed on good sides.
+1. A four-sided die with $F_{i}\in\{1,2,3,4\}$ good faces.
+2. A starter score $S_{i}\in\{0,1,2,3,4\}$.
 
-When do you play either game?
+Game $A_{i}$ requires one to:
+
+1. Roll its die exactly four times
+2. Exit the carnival with score $\max(S,S_{i})+S_{3-i}$, where $S$ is the number
+   of rolls that landed on good faces.
+
+When should one play either game?
