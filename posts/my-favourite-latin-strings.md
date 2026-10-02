@@ -1,3 +1,8 @@
+---
+date: 2026-10-03
+name: My Favourite Latin Strings
+---
+
 | Latin            | English                               |
 | ---------------- | ------------------------------------- |
 | Alea iacta est   | (The) die is cast                     |
