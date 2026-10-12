@@ -9,7 +9,7 @@ document.body.innerHTML = String(
 	await remark().use(remarkMath).use(remarkRehype).use(rehypeMathjax).use(rehypeStringify).process(
 		document.body.firstChild.textContent
 			.replaceAll("\\(", "$").replaceAll("\\)", "$")
-			.replaceAll("\\[", "$$$$").replaceAll("\\]", "$$$$")
+			.replaceAll("\\[", () => "$$").replaceAll("\\]", () => "$$$$")
 	)
 );
 
