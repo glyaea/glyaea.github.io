@@ -5,22 +5,9 @@ body {
 	text-transform: uppercase;
 }
 
-a,
-a:hover,
-a:visited {
-	color: inherit;
-	text-decoration: underline;
-	text-decoration-thickness: 0.5px;
-	text-underline-offset: 2px;
-}
-
 dl {
 	display: grid;
 	grid-template-columns: 1fr auto;
-}
-
-dt {
-	text-align: left;
 }
 
 dd {

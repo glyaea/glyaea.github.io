@@ -1,1 +1,18 @@
 @import url("../../base.css");
+
+body {
+	font-family: "Iowan Old Style";
+}
+
+table {
+	border-collapse: collapse;
+}
+
+tr:not(tbody tr:last-child) {
+	border-bottom: 0.5px solid silver;
+}
+
+th,
+td {
+	padding: 0.5rem 1rem;
+}

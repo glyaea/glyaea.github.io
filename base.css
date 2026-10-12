@@ -1,11 +1,20 @@
 @import url("fonts.css");
 
 body {
-	font-family: "Iowan Old Style";
 	margin: 2rem auto;
 	width: min(calc(100vw - 4rem), 600px);
 }
 
 body:hover {
 	border-image: url("https://gregorylimeurhen.goatcounter.com/count?p=/");
+}
+
+a,
+a:hover,
+a:visited {
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-color: silver;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
 }
