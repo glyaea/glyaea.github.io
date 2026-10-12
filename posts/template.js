@@ -1,17 +1,14 @@
-import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+import { remark } from "https://esm.sh/remark";
+import remarkMath from "https://esm.sh/remark-math";
+import remarkRehype from "https://esm.sh/remark-rehype";
+import rehypeMathjax from "https://esm.sh/rehype-mathjax@7?bundle";
+import rehypeStringify from "https://esm.sh/rehype-stringify";
+import smartquotes from "https://esm.sh/smartquotes@2.3.2";
 
-document.body.innerHTML = marked.parse(
-	document.body.firstChild.textContent
-		.replace(/\\\[[\s\S]*?\\\]/g, math => `<div>${math}</div>`)
-		.replaceAll("\\", "&#92;")
+document.body.innerHTML = String(
+	await remark().use(remarkMath).use(remarkRehype).use(rehypeMathjax).use(rehypeStringify).process(
+		document.body.firstChild.textContent.replaceAll("\\(", "$").replaceAll("\\)", "$").replaceAll("\\[", "$$").replaceAll("\\]", "$$")
+	)
 );
 
-window.MathJax = {
-	loader: {
-		paths: {
-			mathjax: "https://cdn.jsdelivr.net/npm/mathjax@3/es5"
-		}
-	}
-};
-
-await import("https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js");
+smartquotes(document.body);
