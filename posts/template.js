@@ -7,11 +7,19 @@ import rehypeStringify from "https://esm.sh/rehype-stringify";
 import smartquotes from "https://esm.sh/smartquotes@2.3.2";
 
 document.body.innerHTML = String(
-	await remark().use(remarkGfm).use(remarkMath).use(remarkRehype).use(rehypeMathjax).use(rehypeStringify).process(
-		document.body.firstChild.textContent
-			.replaceAll("\\(", "$").replaceAll("\\)", "$")
-			.replaceAll("\\[", () => "$$").replaceAll("\\]", () => "$$$$")
-	)
+	await remark()
+		.use(remarkGfm)
+		.use(remarkMath)
+		.use(remarkRehype)
+		.use(rehypeMathjax)
+		.use(rehypeStringify)
+		.process(
+			document.body.firstChild.textContent
+				.replaceAll("\\(", "$")
+				.replaceAll("\\)", "$")
+				.replaceAll("\\[", () => "$$$$")
+				.replaceAll("\\]", () => "$$$$")
+		)
 );
 
 smartquotes(document.body);
