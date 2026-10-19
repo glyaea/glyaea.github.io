@@ -1,3 +1,3 @@
 all:
 	cd posts \
-	uv run python build.py
+	python build.py
