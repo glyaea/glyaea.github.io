@@ -6,7 +6,7 @@ import {
 	rehypeMathjax,
 	rehypeStringify,
 	smartquotes
-} from "./imports.js";
+} from "../base.js";
 
 document.body.innerHTML = String(
 	await remark()
