@@ -4,10 +4,6 @@ body {
 	font-family: "Iowan Old Style";
 }
 
-p:has(> mjx-container:only-child) {
-	text-align: center;
-}
-
 table {
 	border-collapse: collapse;
 }
