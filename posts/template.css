@@ -4,7 +4,7 @@ body {
 	font-family: "Iowan Old Style";
 }
 
-p:has(mjx-container:only-child) {
+p:has(> mjx-container:only-child) {
 	text-align: center;
 }
 
