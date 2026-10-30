@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="../template.css">
+<script type="module" src="../template.js"></script>
+
+<body>
+# Hiding Chrome Bookmarks
+
+In Chrome (and Chrome-like browsers), the built-in settings currently do not
+support hiding bookmark subsets from the address bar. I recently found a simple
+and efficient way to toggle their visibility with a single character.
+
+A uniform resource locator (URL) can be seen as \(S\texttt{://}O\). The method
+applies to (the characters in) \(O\):
+
+- Prepend it with \(\texttt{\_}\).
+- Append each \(\texttt{.}\), \(\texttt{/}\), \(\texttt{?}\), \(\texttt{=}\),
+  \(\texttt{+}\), \(\texttt{\&}\), and \(\texttt{\#}\) with \(\texttt{\_}\).
+- Prepend each \(\texttt{:}\) with \(\texttt{\_}\).
+
+For example,
+\(
+	A
+	\texttt{.}
+	B
+	\texttt{:}
+	C
+	\texttt{/}
+	D
+	\texttt{?}
+	E
+	\texttt{=}
+	F
+	\texttt{+}
+	G
+	\texttt{\&}
+	H
+	\texttt{=}
+	I
+	\texttt{\#}J
+\)
+becomes:
+
+\[
+	\texttt{\_}A
+	\texttt{.\_}B
+	\texttt{\_:}C
+	\texttt{/\_}D
+	\texttt{?\_}E
+	\texttt{=\_}F
+	\texttt{+\_}G
+	\texttt{\&\_}H
+	\texttt{=\_}I
+	\texttt{\#\_}J
+\]
+
+Then, in the address bar, one can type:
+
+- \(\texttt{\_:}C\) to search for \(C\).
+- \(\texttt{\_}X\) to search for \(X\), where \(X\in\{A,B,D,E,F,G,H,I,J\}\).
+</body>
